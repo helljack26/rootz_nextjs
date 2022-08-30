@@ -172,8 +172,6 @@
             top: 0px;
             right: -35px;
             z-index: 1;
-            .membersAndParrot_leafs {
-            }
         }
 
         .membersAndParrot_parrot_block {
@@ -181,9 +179,6 @@
             top: 70px;
             right: 50px;
             z-index: 2;
-
-            .membersAndParrot_parrot {
-            }
         }
         .members_container {
             position: absolute;
@@ -218,6 +213,124 @@
                     font-size: 56px;
                     line-height: 80px;
                     color: white;
+                }
+            }
+        }
+    }
+}
+
+.blog {
+    display: grid;
+    grid-template-columns: repeat(3, 320px);
+    justify-content: space-between;
+    align-self: center;
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    column-gap: 55px;
+    .article {
+        display: flex;
+        flex-direction: row;
+        column-gap: 25px;
+
+        .article_video {
+            min-width: 160px;
+            width: 160px;
+            height: 112px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            user-select: none;
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                cursor: pointer;
+                filter: brightness(0.8);
+            }
+            &:hover > .article_video_playBtn {
+                opacity: 1;
+            }
+            .article_video_playBtn {
+                width: 40px;
+                height: 40px;
+                border-radius: 40px;
+                background-color: white;
+                position: absolute;
+                top: calc(50% - 20px);
+                left: calc(50% - 20px);
+                bottom: calc(50% - 20px);
+                right: calc(50% - 20px);
+                padding-left: 10px;
+                transition: all 0.3s ease-in-out;
+
+                &::before {
+                    width: 0;
+                    height: 0;
+                    border-top: 8px solid transparent;
+                    border-bottom: 8px solid transparent;
+                    border-left: 10px solid black;
+                    display: flex;
+                    margin: 0 auto;
+                    content: "";
+                }
+            }
+        }
+        .article_image {
+            min-width: 112px;
+            width: 112px;
+            height: 112px;
+            border-radius: 112px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            user-select: none;
+        }
+
+        .article_info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 9px 0px;
+
+            .article_info_hash {
+                font-family: $fRegular;
+                color: #333333;
+                font-size: 12px;
+                line-height: 16px;
+
+                .article_info_hash_text {
+                    margin-left: 4px;
+                    color: $cBlackSecond;
+                }
+            }
+            .article_info_title {
+                font-family: $fBold;
+                color: #333333;
+                font-size: 14px;
+                line-height: 18px;
+                padding-bottom: 5px;
+            }
+            .article_info_link {
+                color: $cBlackSecond;
+                font-size: 12px;
+                line-height: 16px;
+                width: fit-content;
+                border-bottom: 1px solid $cBlackSecond;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    border-bottom: 1px solid $cOrange;
+                    color: $cOrange;
+                }
+                &:active {
+                    transition: all 0.1s ease-in-out;
+                    border-bottom: 1px solid $cBlackSecond;
+                    color: $cBlackSecond;
                 }
             }
         }

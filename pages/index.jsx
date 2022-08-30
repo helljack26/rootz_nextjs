@@ -6,7 +6,9 @@ import style from '../styles/main.module.scss'
 import I from '../img/images'
 // Components
 import { Navbar } from '../components/navbar';
-import { Intro } from '../components/Intro/intro';
+import { NatureNeedsYou } from '../components/Intro/natureNeedsYou';
+import { MembersAndParrot } from '../components/Intro/membersAndParrot';
+import { Blog } from '../components/blog';
 
 
 export default function Home() {
@@ -20,7 +22,14 @@ export default function Home() {
 
             <Navbar />
 
-            <Intro />
+            <main>
+                <div className={style.intro}>
+                    <NatureNeedsYou />
+                    <MembersAndParrot />
+                </div>
+
+                <Blog />
+            </main>
 
         </>
     )
