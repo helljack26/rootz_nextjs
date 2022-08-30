@@ -37,3 +37,13 @@ button {
     background-color: transparent;
     cursor: pointer;
 }
+
+input:focus-visible {
+    outline: 1px solid transparent;
+}
+
+input:hover {
+    outline: 1px solid transparent;
+    border: 1px solid transparent;
+    border-color: transparent;
+}

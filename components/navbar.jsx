@@ -23,7 +23,7 @@ export const Navbar = () => {
                 <Link href={'/'}><a>Team</a></Link>
             </nav>
 
-            <button className={style.header_button}>
+            <button type='button' className={style.header_button}>
                 Apply
             </button>
         </header>

@@ -6,6 +6,7 @@ import style from '../styles/main.module.scss'
 import I from '../img/images'
 // Components
 import { Navbar } from '../components/navbar';
+import { Intro } from '../components/Intro/intro';
 
 
 export default function Home() {
@@ -17,10 +18,9 @@ export default function Home() {
                 <meta charSet="utf-8" />
             </Head>
 
-            <div className={style.intro}>
-                <Navbar />
+            <Navbar />
 
-            </div>
+            <Intro />
 
         </>
     )
