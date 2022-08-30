@@ -1,0 +1,39 @@
+body {
+    font-family: 'Poppins-Regular', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+
+}
+
+body::-webkit-scrollbar {
+    width: 16px;
+}
+
+body::-webkit-scrollbar-track {
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+    background: linear-gradient(180deg, #ffffff, #ffffff);
+    border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f2726c), to(#7675FD));
+    background: linear-gradient(180deg, #f2726c, #7675FD);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
