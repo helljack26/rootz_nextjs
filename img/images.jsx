@@ -9,9 +9,12 @@ import leafs from './leafs.svg'
 import post1 from './post1.png'
 import post2 from './post_video2.png'
 import post3 from './post3.png'
+// First slider
+import firstSliderRectangle from './slides_rectangle.svg'
 
 // Icons
 import locationIcon from './icons/location_icon.svg'
+import sliderArrow from './icons/slider_arrow_icon.svg'
 
 const I = {
     // Intro
@@ -25,8 +28,11 @@ const I = {
     post1: post1,
     post2: post2,
     post3: post3,
+    // First slider
+    firstSliderRectangle: firstSliderRectangle,
     // Icons
     locationIcon: locationIcon,
+    sliderArrow: sliderArrow,
 }
 
 export default I;

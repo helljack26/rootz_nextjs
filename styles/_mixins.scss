@@ -79,6 +79,12 @@
 }
 
 //////// Text //////////
+@mixin headerBold40() {
+    font-family: $fBold;
+    font-size: 40px;
+    color: $cBlack;
+    line-height: 56px;
+}
 @mixin headerBold20() {
     font-family: $fBold;
     font-size: 20px;
@@ -113,7 +119,7 @@
 @mixin plainText18() {
     font-family: $fRegular;
     font-size: 18px;
-    line-height: 28px;
+    line-height: 32px;
     color: $cBlack;
 
     @media (max-width: 992px) {

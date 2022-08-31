@@ -9,6 +9,7 @@ import { Navbar } from '../components/navbar';
 import { NatureNeedsYou } from '../components/Intro/natureNeedsYou';
 import { MembersAndParrot } from '../components/Intro/membersAndParrot';
 import { Blog } from '../components/blog';
+import { FirstSlider } from '../components/firstSlider';
 
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
                 </div>
 
                 <Blog />
+                <FirstSlider />
             </main>
 
         </>
