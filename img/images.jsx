@@ -11,6 +11,14 @@ import post2 from './post_video2.png'
 import post3 from './post3.png'
 // First slider
 import firstSliderRectangle from './slides_rectangle.svg'
+// Our team
+import team1 from './ourTeam/team_1.png'
+import team2 from './ourTeam/team_2.png'
+import team3 from './ourTeam/team_3.png'
+import teamMask1 from './ourTeam/team_mask_1.svg'
+import teamMask2 from './ourTeam/team_mask_2.svg'
+import teamMask3 from './ourTeam/team_mask_3.svg'
+import chainBetweenTeam from './ourTeam/chain_between_team.svg'
 
 // Icons
 import locationIcon from './icons/location_icon.svg'
@@ -30,6 +38,14 @@ const I = {
     post3: post3,
     // First slider
     firstSliderRectangle: firstSliderRectangle,
+    // Our team
+    team1: team1,
+    team2: team2,
+    team3: team3,
+    teamMask1: teamMask1,
+    teamMask2: teamMask2,
+    teamMask3: teamMask3,
+    chainBetweenTeam: chainBetweenTeam,
     // Icons
     locationIcon: locationIcon,
     sliderArrow: sliderArrow,

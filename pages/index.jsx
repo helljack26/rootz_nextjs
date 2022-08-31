@@ -10,6 +10,7 @@ import { NatureNeedsYou } from '../components/Intro/natureNeedsYou';
 import { MembersAndParrot } from '../components/Intro/membersAndParrot';
 import { Blog } from '../components/blog';
 import { FirstSlider } from '../components/firstSlider';
+import { OurTeam } from '../components/ourTeam';
 
 
 export default function Home() {
@@ -31,6 +32,8 @@ export default function Home() {
 
                 <Blog />
                 <FirstSlider />
+                <OurTeam />
+
             </main>
 
         </>

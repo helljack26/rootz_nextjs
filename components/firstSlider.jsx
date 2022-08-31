@@ -9,7 +9,6 @@ import style from '../styles/main.module.scss';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 const firstSliderData = [
 	{
 		slideId: 1,
@@ -29,7 +28,8 @@ const firstSliderData = [
 		slideText: 'The scale of the challenges facing our planet can seem daunting, but we can all do something. Easy to asso- ciate it with a geometric patterned wallpaper.',
 		sliderBgColor: '#CBCBFF',
 	},
-]
+];
+
 export const FirstSlider = () => {
 	const [sliderData, setState] = useState([])
 	const [currentPosition, setCurrentPosition] = useState(1)
@@ -43,6 +43,7 @@ export const FirstSlider = () => {
 		arrows: false,
 		slidesToShow: 1,
 		slidesToScroll: 1,
+		speed: 600,
 	};
 	const isFirstSlide = currentPosition === 1
 	const isLastSlide = sliderData && currentPosition === sliderData.length
@@ -101,8 +102,8 @@ export const FirstSlider = () => {
 													{c.slideText}
 												</p>
 											</div>
-											<div className={style.firstSlider_item_img}>
-												<Image src={I.firstSliderRectangle} priority />
+											<div className={style.firstSlider_item_img_block}>
+												<Image src={I.firstSliderRectangle} className={style.firstSlider_item_img} priority />
 											</div>
 										</div>
 									</div>
@@ -110,7 +111,6 @@ export const FirstSlider = () => {
 							})}
 					</Slider>
 				</div>
-
 			</section >
 		</>
 	)
