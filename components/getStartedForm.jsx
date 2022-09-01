@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import { useForm } from 'react-hook-form';
 
@@ -7,15 +7,15 @@ import I from '../img/images'
 import style from '../styles/main.module.scss'
 
 export const GetStartedForm = () => {
-	const { register, handleSubmit, resetField, control, reset, formState: { errors }, } = useForm();
+	const { register, handleSubmit, setValue, control, reset, formState: { errors }, } = useForm();
 	const [isSuccessDisplay, setSuccessDisplay] = useState(false);
 	const [isSuccess, setSuccess] = useState(false);
 
 	const onSubmit = (data) => {
 		console.log('кайф', data)
 		reset({ ...data })
-		resetField('userName')
-		resetField('userEmail')
+		setValue('userName', '')
+		setValue('userEmail', '')
 
 		if (data) {
 			setSuccess(true)

@@ -33,6 +33,7 @@
     }
     &::placeholder {
         color: $cBlackSecond;
+        user-select: none;
     }
 }
 @mixin mainInputIcon() {
@@ -90,6 +91,12 @@
     font-size: 40px;
     color: $cBlack;
     line-height: 56px;
+}
+@mixin headerBold24() {
+    font-family: $fBold;
+    font-size: 24px;
+    color: #1e1a20;
+    line-height: 34px;
 }
 @mixin headerBold20() {
     font-family: $fBold;

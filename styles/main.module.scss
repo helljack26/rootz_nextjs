@@ -532,7 +532,7 @@
         h2 {
             @include headerBold40;
             color: #222433;
-            margin-bottom: 42px;
+            margin-bottom: 37px;
         }
         p {
             @include plainText18;
@@ -641,6 +641,110 @@
             transition: all 0.3s ease-in-out;
             @media screen and (max-width: 567px) {
                 font-size: 25px;
+            }
+        }
+    }
+}
+
+.readyAccordion {
+    max-width: 1118px;
+    height: 560px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    column-gap: 3vw;
+    margin: 0 auto;
+    margin-top: 190px;
+    .readyAccordion_col {
+        max-width: 480px;
+
+        h2 {
+            @include headerBold40;
+            color: #222433;
+            margin-bottom: 35px;
+        }
+        p {
+            @include plainText18;
+            color: #1e1a20;
+            padding-right: 4vw;
+            padding-bottom: 42px;
+        }
+        button {
+            @include buttonRounded;
+            width: 166px;
+            margin-top: 16px;
+            background-color: #f2726c;
+            text-transform: uppercase;
+            color: white;
+            letter-spacing: 1px;
+            font-size: 13px;
+            &:hover {
+                box-shadow: 0 2px 25px #f2736c70;
+            }
+
+            &:active {
+                background-color: #f2736c70;
+                color: white;
+                box-shadow: 0 2px 25px #f2736c70;
+            }
+            &:focus-visible {
+                outline: none;
+                outline: 1px solid $cBorder;
+                box-shadow: 0 2px 25px #f2736c70;
+            }
+        }
+    }
+    .readyAccordion_block {
+        margin-top: -28px;
+        .accordion_item {
+            width: 100%;
+            padding: 32px 0px;
+            padding-right: 77px;
+            border-bottom: 1px solid #d2d1d2;
+            position: relative;
+            .accordion_item_header {
+                @include headerBold24;
+                .accordion_item_button {
+                    @include buttonRounded;
+                    width: 40px;
+                    height: 40px;
+                    background-color: $cOrange;
+                    position: absolute;
+                    top: 29px;
+                    right: 0px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: row;
+
+                    span {
+                        width: 14px;
+                        height: 2px;
+                        background-color: white;
+                        display: block;
+                        position: absolute;
+                        top: calc(50% - 1px);
+                        left: calc(50% - 7px);
+                        transition: all 0.3s ease-in-out;
+                        &:last-child {
+                            transform: rotate(90deg);
+                        }
+                    }
+                    .rotate180 {
+                        transform: rotate(-180deg);
+                    }
+                    .rotate90 {
+                        transform: rotate(-90deg);
+                    }
+                    .rotate0 {
+                        transform: rotate(0deg) !important;
+                    }
+                }
+            }
+            .accordion_item_collapsible {
+                @include plainText16;
+                padding-top: 16px;
             }
         }
     }

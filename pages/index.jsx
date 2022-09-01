@@ -13,6 +13,7 @@ import { FirstSlider } from '../components/firstSlider';
 import { OurTeam } from '../components/ourTeam';
 import { TheScaleOf } from '../components/theScaleOf';
 import { GetStartedForm } from '../components/getStartedForm';
+import { ReadyAccordion } from '../components/readyAccordion';
 
 export default function Home() {
     return (
@@ -36,6 +37,7 @@ export default function Home() {
                 <OurTeam />
                 <TheScaleOf />
                 <GetStartedForm />
+                <ReadyAccordion />
 
             </main>
 
