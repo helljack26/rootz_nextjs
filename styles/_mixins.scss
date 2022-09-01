@@ -79,6 +79,12 @@
 }
 
 //////// Text //////////
+@mixin headerBold50() {
+    font-family: $fBold;
+    font-size: 50px;
+    color: $cBlack;
+    line-height: 64px;
+}
 @mixin headerBold40() {
     font-family: $fBold;
     font-size: 40px;
@@ -90,6 +96,12 @@
     font-size: 20px;
     color: $cBlack;
     line-height: 28px;
+}
+@mixin headerBold14() {
+    font-family: $fBold;
+    font-size: 14px;
+    color: $cBlack;
+    line-height: 20px;
 }
 
 @mixin plainText24() {

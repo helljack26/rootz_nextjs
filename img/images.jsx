@@ -19,6 +19,14 @@ import teamMask1 from './ourTeam/team_mask_1.svg'
 import teamMask2 from './ourTeam/team_mask_2.svg'
 import teamMask3 from './ourTeam/team_mask_3.svg'
 import chainBetweenTeam from './ourTeam/chain_between_team.svg'
+// The scale of 
+import scaleLeafsLeft from './theScale/left_leafs.svg'
+import scaleLeafsRight from './theScale/right_leafs.svg'
+import scaleLeafsMobile from './theScale/mobile_leafs.svg'
+import scaleGradientCircle from './theScale/gradient_circle.svg'
+import scaleUserIcon from './theScale/user_icon.svg'
+import scaleGraphIcon from './theScale/graph_icon.svg'
+import scaleWashIcon from './theScale/wash_machine_icon.svg'
 
 // Icons
 import locationIcon from './icons/location_icon.svg'
@@ -46,6 +54,14 @@ const I = {
     teamMask2: teamMask2,
     teamMask3: teamMask3,
     chainBetweenTeam: chainBetweenTeam,
+    // The scale of
+    scaleLeafsLeft: scaleLeafsLeft,
+    scaleGradientCircle: scaleGradientCircle,
+    scaleLeafsRight: scaleLeafsRight,
+    scaleLeafsMobile: scaleLeafsMobile,
+    scaleUserIcon: scaleUserIcon,
+    scaleGraphIcon: scaleGraphIcon,
+    scaleWashIcon: scaleWashIcon,
     // Icons
     locationIcon: locationIcon,
     sliderArrow: sliderArrow,

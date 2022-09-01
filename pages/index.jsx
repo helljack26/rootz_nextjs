@@ -11,7 +11,7 @@ import { MembersAndParrot } from '../components/Intro/membersAndParrot';
 import { Blog } from '../components/blog';
 import { FirstSlider } from '../components/firstSlider';
 import { OurTeam } from '../components/ourTeam';
-
+import { TheScaleOf } from '../components/theScaleOf';
 
 export default function Home() {
     return (
@@ -33,6 +33,7 @@ export default function Home() {
                 <Blog />
                 <FirstSlider />
                 <OurTeam />
+                <TheScaleOf />
 
             </main>
 

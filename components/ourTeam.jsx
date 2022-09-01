@@ -36,7 +36,7 @@ export const OurTeam = () => {
                         return (
                             <>
                                 <span className={style.ourTeam_row_item} key={id} >
-                                    <Image className={style.logo} src={teammate.teamImg} />
+                                    <Image src={teammate.teamImg} />
                                 </span>
                             </>
                         )
@@ -44,11 +44,11 @@ export const OurTeam = () => {
                 </div>
 
                 <span className={style.chain_between_team_left}>
-                    <Image className={style.logo} src={I.chainBetweenTeam} />
+                    <Image src={I.chainBetweenTeam} />
                 </span>
 
                 <span className={style.chain_between_team_right}>
-                    <Image className={style.logo} src={I.chainBetweenTeam} />
+                    <Image src={I.chainBetweenTeam} />
                 </span>
             </div>
         </div>
