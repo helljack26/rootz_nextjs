@@ -42,7 +42,8 @@ export const TheScaleOf = () => {
                     )
                 })}
             </div>
-            {/* Background */}
+
+            {/* Backgrounds */}
             <span className={style.scale_leafs_left}>
                 <Image src={I.scaleLeafsLeft} />
             </span>

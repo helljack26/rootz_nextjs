@@ -27,6 +27,8 @@ import scaleGradientCircle from './theScale/gradient_circle.svg'
 import scaleUserIcon from './theScale/user_icon.svg'
 import scaleGraphIcon from './theScale/graph_icon.svg'
 import scaleWashIcon from './theScale/wash_machine_icon.svg'
+// Get started form
+import formLeafs from './form_leafs.svg'
 
 // Icons
 import locationIcon from './icons/location_icon.svg'
@@ -62,6 +64,8 @@ const I = {
     scaleUserIcon: scaleUserIcon,
     scaleGraphIcon: scaleGraphIcon,
     scaleWashIcon: scaleWashIcon,
+    // Get started form
+    formLeafs: formLeafs,
     // Icons
     locationIcon: locationIcon,
     sliderArrow: sliderArrow,

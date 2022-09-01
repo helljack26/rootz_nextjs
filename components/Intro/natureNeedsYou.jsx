@@ -5,7 +5,6 @@ import style from '../../styles/main.module.scss';
 import I from '../../img/images'
 
 export const NatureNeedsYou = () => {
-    const inputRef = useRef(null);
     const [isInputFocus, setInputFocus] = useState(false);
     const [isInputActive, setInputActive] = useState(false);
 
@@ -26,7 +25,6 @@ export const NatureNeedsYou = () => {
                 </span>
 
                 <input
-                    ref={inputRef}
                     type="text"
                     placeholder='Find the place to help'
                     className={style.search_input}

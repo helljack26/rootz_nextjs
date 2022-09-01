@@ -511,3 +511,137 @@
         flex-direction: row;
     }
 }
+
+.getStartedForm {
+    max-width: 1118px;
+    height: 560px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    padding: 104px;
+    padding-left: 80px;
+    column-gap: 6.5vw;
+    margin: 0 auto;
+    margin-top: 194px;
+    background-color: #ffbd9e;
+    .getStartedForm_col {
+        align-self: center;
+        max-width: 390px;
+
+        h2 {
+            @include headerBold40;
+            color: #222433;
+            margin-bottom: 42px;
+        }
+        p {
+            @include plainText18;
+            color: #1e1a20;
+        }
+    }
+    .getStartedForm_form {
+        background-color: #f7f3f4;
+        border-radius: 16px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 35px 55px;
+        h3 {
+            font-family: $fBold;
+            font-size: 32px;
+            color: #222433;
+            line-height: 56px;
+            margin-bottom: 29px;
+        }
+        .getStartedForm_form_input {
+            position: relative;
+            width: 100%;
+            margin-bottom: 15px;
+            border-radius: 40px;
+            transition: all 0.3s ease-in-out;
+        }
+        input {
+            @include mainInput;
+            height: 48px;
+            width: 100%;
+            transition: all 0.3s ease-in-out;
+            border: 1px solid transparent;
+            &:focus-visible {
+                outline: none;
+            }
+            &:focus {
+                outline: none;
+                border: 1px solid #7675fd;
+            }
+            &:active {
+                outline: none;
+                border: 1px solid #7675fd;
+            }
+            &:hover {
+                outline: none;
+                border: 1px solid #7675fd;
+            }
+        }
+        .errorMessage {
+            color: rgb(244, 59, 59);
+            position: absolute;
+            left: 24px;
+            bottom: -20px;
+            font-size: 14px;
+        }
+        button {
+            @include buttonRounded;
+            width: 100%;
+            margin-top: 16px;
+            background-color: #f2726c;
+            text-transform: uppercase;
+            color: white;
+            letter-spacing: 1px;
+            font-size: 13px;
+            &:hover {
+                box-shadow: 0 2px 25px #f2736c70;
+            }
+
+            &:active {
+                background-color: #f2736c70;
+                color: white;
+                box-shadow: 0 2px 25px #f2736c70;
+            }
+            &:focus-visible {
+                outline: none;
+                outline: 1px solid $cBorder;
+                box-shadow: 0 2px 25px #f2736c70;
+            }
+        }
+        .getStartedForm_form_leaf {
+            position: absolute;
+            top: -20px;
+            right: -15px;
+            z-index: 21;
+        }
+        .getStartedForm_success {
+            width: inherit;
+            height: inherit;
+            background: linear-gradient(347.34deg, #43a3a8 31.62%, #24236d 74.85%);
+            z-index: 20;
+            position: absolute;
+            border-radius: 8px;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            text-align: center;
+            color: white;
+            font-size: 30px;
+            transition: all 0.3s ease-in-out;
+            @media screen and (max-width: 567px) {
+                font-size: 25px;
+            }
+        }
+    }
+}
