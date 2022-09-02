@@ -14,6 +14,7 @@ import { OurTeam } from '../components/ourTeam';
 import { TheScaleOf } from '../components/theScaleOf';
 import { GetStartedForm } from '../components/getStartedForm';
 import { ReadyAccordion } from '../components/readyAccordion';
+import { SecondSlider } from '../components/secondSlider';
 
 export default function Home() {
     return (
@@ -38,6 +39,7 @@ export default function Home() {
                 <TheScaleOf />
                 <GetStartedForm />
                 <ReadyAccordion />
+                <SecondSlider />
 
             </main>
 

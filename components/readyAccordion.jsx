@@ -24,7 +24,6 @@ const accordionData = [
 
 const AccordionItem = ({ item, isShowDescription, setActiveIndex, index }) => {
 	const [height, setHeight] = useState(0);
-
 	const [isRotatePlus, setRotatePlus] = useState(false);
 
 	useEffect(() => {
@@ -39,7 +38,7 @@ const AccordionItem = ({ item, isShowDescription, setActiveIndex, index }) => {
 	}, []);
 
 	return (
-		<div className={style.accordion_item}>
+		<div className={style.accordion_item} >
 			<button
 				className={style.accordion_item_header}
 				aria-expanded={height !== 0}
@@ -90,6 +89,7 @@ export const ReadyAccordion = () => {
 
 						return (
 							<AccordionItem
+								key={index}
 								index={index}
 								item={item}
 								isShowDescription={isShowDescription}

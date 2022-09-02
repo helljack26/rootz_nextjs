@@ -29,7 +29,18 @@ import scaleGraphIcon from './theScale/graph_icon.svg'
 import scaleWashIcon from './theScale/wash_machine_icon.svg'
 // Get started form
 import formLeafs from './form_leafs.svg'
-
+// Second slider
+import waterSlide from './secondSlider/water.jpg'
+import treesSlide from './secondSlider/plant_trees.jpg'
+import windmillSlide from './secondSlider/windmill.jpg'
+import oceanSlide from './secondSlider/ocean_plastic.jpg'
+import plantSlide from './secondSlider/plant_watering.png'
+import centeredBgSlide from './secondSlider/centered_bg_shape.svg'
+import maskShape1 from './secondSlider/mask_shape_1.svg'
+import maskShape2 from './secondSlider/mask_shape_2.svg'
+import maskShape3 from './secondSlider/mask_shape_3.svg'
+import maskShape4 from './secondSlider/mask_shape_4.svg'
+import maskShape5 from './secondSlider/mask_shape_5.svg'
 // Icons
 import locationIcon from './icons/location_icon.svg'
 import sliderArrow from './icons/slider_arrow_icon.svg'
@@ -66,6 +77,18 @@ const I = {
     scaleWashIcon: scaleWashIcon,
     // Get started form
     formLeafs: formLeafs,
+    // Second slider
+    waterSlide: waterSlide,
+    treesSlide: treesSlide,
+    windmillSlide: windmillSlide,
+    oceanSlide: oceanSlide,
+    plantSlide: plantSlide,
+    centeredBgSlide: centeredBgSlide,
+    maskShape1: maskShape1,
+    maskShape2: maskShape2,
+    maskShape3: maskShape3,
+    maskShape4: maskShape4,
+    maskShape5: maskShape5,
     // Icons
     locationIcon: locationIcon,
     sliderArrow: sliderArrow,

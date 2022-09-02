@@ -44,6 +44,7 @@ export const FirstSlider = () => {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		speed: 600,
+		afterChange: current => setCurrentPosition(current + 1)
 	};
 	const isFirstSlide = currentPosition === 1
 	const isLastSlide = sliderData && currentPosition === sliderData.length
@@ -53,7 +54,6 @@ export const FirstSlider = () => {
 	// }
 
 	if (sliderData.length === 0) {
-		console.log('кайф');
 		setState(firstSliderData)
 		// const blog = await api.blog.getBlog();
 		// if (blog) {
@@ -76,12 +76,12 @@ export const FirstSlider = () => {
 						<>
 							<button
 								className={`${style.slider_controls_left} ${isFirstSlide && style.slider_controls_disable}`}
-								onClick={() => { (sliderRef.current).slickPrev(); setCurrentPosition(+currentPosition - 1) }}>
+								onClick={() => { (sliderRef.current).slickPrev(); }}>
 								<Image src={I.sliderArrow} width={24} height={44} priority />
 							</button>
 							<button
 								className={`${style.slider_controls_right} ${isLastSlide && style.slider_controls_disable}`}
-								onClick={() => { (sliderRef.current).slickNext(); setCurrentPosition(+currentPosition + 1) }}>
+								onClick={() => { (sliderRef.current).slickNext(); }}>
 								<Image src={I.sliderArrow} width={24} height={44} priority />
 							</button>
 						</>

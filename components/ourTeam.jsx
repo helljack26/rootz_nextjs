@@ -34,11 +34,11 @@ export const OurTeam = () => {
 
                     {teamData.map((teammate, id) => {
                         return (
-                            <>
-                                <span className={style.ourTeam_row_item} key={id} >
-                                    <Image src={teammate.teamImg} />
-                                </span>
-                            </>
+                            // <>
+                            <span className={style.ourTeam_row_item} key={id} >
+                                <Image src={teammate.teamImg} />
+                            </span>
+                            // </>
                         )
                     })}
                 </div>

@@ -648,7 +648,6 @@
 
 .readyAccordion {
     max-width: 1118px;
-    height: 560px;
     border-radius: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -656,6 +655,7 @@
     column-gap: 3vw;
     margin: 0 auto;
     margin-top: 190px;
+    margin-bottom: 192px;
     .readyAccordion_col {
         max-width: 480px;
 
@@ -696,22 +696,27 @@
         }
     }
     .readyAccordion_block {
-        margin-top: -28px;
+        margin-top: -35px;
         .accordion_item {
             width: 100%;
-            padding: 32px 0px;
-            padding-right: 77px;
             border-bottom: 1px solid #d2d1d2;
-            position: relative;
+            padding: 35px 0px;
             .accordion_item_header {
+                position: relative;
+                width: 100%;
+                padding-right: 77px;
                 @include headerBold24;
+                text-align: left;
+                span {
+                    text-align: left;
+                }
                 .accordion_item_button {
                     @include buttonRounded;
                     width: 40px;
                     height: 40px;
                     background-color: $cOrange;
                     position: absolute;
-                    top: 29px;
+                    top: -3px;
                     right: 0px;
                     display: flex;
                     justify-content: center;
@@ -721,6 +726,7 @@
                     span {
                         width: 14px;
                         height: 2px;
+                        border-radius: 1px;
                         background-color: white;
                         display: block;
                         position: absolute;
@@ -744,7 +750,163 @@
             }
             .accordion_item_collapsible {
                 @include plainText16;
-                padding-top: 16px;
+                margin-top: 16px;
+                padding-right: 77px;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    }
+}
+
+.secondSlider {
+    margin-bottom: 40px;
+    background-color: #ffbd9e;
+    padding: 104px 0px;
+    .secondSlider_block {
+        .secondSlider_item {
+            padding-left: 80px;
+            column-gap: 10vw;
+            padding-right: 0px;
+            margin: 0px 15px;
+            z-index: 10;
+            position: relative;
+            height: 375px;
+            .secondSlider_item_col {
+                align-self: center;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                bottom: 0px;
+                right: 0px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                padding: 0px 30px;
+                padding-top: 80px;
+                .secondSlider_item_col_title {
+                    @include headerBold24;
+                    color: #222433;
+                    margin-bottom: 8px;
+                    z-index: 10;
+                    transition: all 0.3s ease-in-out;
+                }
+                .secondSlider_item_col_text {
+                    @include plainText16;
+                    color: #1e1a20;
+                    z-index: 10;
+                    text-align: center;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+            .secondSlider_centeredBg {
+                position: absolute;
+                top: 35px;
+                left: 0px;
+                bottom: 0px;
+                right: 0px;
+                z-index: 0;
+                transition: all 0.5s ease;
+                transform: scale(0.5);
+            }
+            @mixin secondSlider_imageBg {
+                position: absolute;
+                top: calc(50% - 125px);
+                left: calc(50% - 130px);
+                z-index: 5;
+                transition: all 0.5s ease;
+                transform: scale(1);
+                width: 260px;
+                height: 230px;
+                mask-position: center;
+                mask-repeat: no-repeat;
+                mask-size: contain;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                filter: brightness(0.8);
+                span {
+                    position: relative;
+                }
+            }
+            .secondSlider_imageBg_1 {
+                @include secondSlider_imageBg;
+                mask-image: url(../img/secondSlider/mask_shape_1.svg);
+            }
+            .secondSlider_imageBg_2 {
+                @include secondSlider_imageBg;
+                mask-image: url(../img/secondSlider/mask_shape_2.svg);
+            }
+            .secondSlider_imageBg_3 {
+                @include secondSlider_imageBg;
+                mask-image: url(../img/secondSlider/mask_shape_3.svg);
+            }
+            .secondSlider_imageBg_4 {
+                @include secondSlider_imageBg;
+                mask-image: url(../img/secondSlider/mask_shape_4.svg);
+            }
+            .secondSlider_imageBg_5 {
+                @include secondSlider_imageBg;
+                mask-image: url(../img/secondSlider/mask_shape_5.svg);
+            }
+
+            .secondSlider_item_img_block {
+                align-self: flex-end;
+                margin-bottom: -5px;
+
+                .secondSlider_item_img {
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    .secondSlider_controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        column-gap: 3vw;
+        width: 139px;
+        justify-self: center;
+        align-self: center;
+        margin: 0 auto;
+        margin-top: 32px;
+        position: relative;
+        .slider_controls_left {
+            user-select: none;
+            padding: 10px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        .slider_controls_right {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            padding: 10px;
+            transform: rotate(180deg);
+            user-select: none;
+        }
+        .slider_controls_disable {
+            pointer-events: none;
+            cursor: default;
+            opacity: 0.5;
+        }
+
+        .secondSlider_position {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            column-gap: 5px;
+            span {
+                @include plainText24;
+
+                &:last-of-type {
+                    opacity: 0.2;
+                }
             }
         }
     }
