@@ -44,6 +44,9 @@ import maskShape5 from './secondSlider/mask_shape_5.svg'
 // Icons
 import locationIcon from './icons/location_icon.svg'
 import sliderArrow from './icons/slider_arrow_icon.svg'
+import twitterIcon from './icons/twitter_icon.svg'
+import facebookIcon from './icons/facebook_icon.svg'
+import linkedInIcon from './icons/linkedIn_icon.svg'
 
 const I = {
     // Intro
@@ -92,6 +95,9 @@ const I = {
     // Icons
     locationIcon: locationIcon,
     sliderArrow: sliderArrow,
+    twitterIcon: twitterIcon,
+    facebookIcon: facebookIcon,
+    linkedInIcon: linkedInIcon,
 }
 
 export default I;

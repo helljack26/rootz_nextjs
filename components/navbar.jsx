@@ -9,23 +9,26 @@ export const Navbar = () => {
 
     return (
         <header className={style.header}>
-            <Image
-                className={style.logo}
-                src={I.logo}
-                alt="Site logo"
-                priority
-            />
+            <div className={style.header_block}>
+                <Image
+                    className={style.logo}
+                    src={I.logo}
+                    alt="Site logo"
+                    priority
+                />
 
-            <nav className={style.nav}>
-                <Link href={'/'}><a className={style.navlink_active}>Home</a></Link>
-                <Link href={'/'}><a>Our mission</a></Link>
-                <Link href={'/'}><a>Places</a></Link>
-                <Link href={'/'}><a>Team</a></Link>
-            </nav>
+                <nav className={style.nav}>
+                    <Link href={'/'}><a className={style.navlink_active}>Home</a></Link>
+                    <Link href={'/'}><a>Our mission</a></Link>
+                    <Link href={'/'}><a>Places</a></Link>
+                    <Link href={'/'}><a>Team</a></Link>
+                </nav>
 
-            <button type='button' className={style.header_button}>
-                Apply
-            </button>
+                <button type='button' className={style.header_button}>
+                    Apply
+                </button>
+            </div>
+
         </header>
     );
 };

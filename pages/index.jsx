@@ -15,6 +15,7 @@ import { TheScaleOf } from '../components/theScaleOf';
 import { GetStartedForm } from '../components/getStartedForm';
 import { ReadyAccordion } from '../components/readyAccordion';
 import { SecondSlider } from '../components/secondSlider';
+import { Footer } from '../components/footer';
 
 export default function Home() {
     return (
@@ -26,13 +27,11 @@ export default function Home() {
             </Head>
 
             <Navbar />
-
             <main>
                 <div className={style.intro}>
                     <NatureNeedsYou />
                     <MembersAndParrot />
                 </div>
-
                 <Blog />
                 <FirstSlider />
                 <OurTeam />
@@ -40,7 +39,7 @@ export default function Home() {
                 <GetStartedForm />
                 <ReadyAccordion />
                 <SecondSlider />
-
+                <Footer />
             </main>
 
         </>

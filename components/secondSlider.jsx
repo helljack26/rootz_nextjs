@@ -4,7 +4,6 @@ import Image from 'next/image'
 import I from '../img/images'
 import style from '../styles/main.module.scss';
 
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -57,18 +56,7 @@ export const SecondSlider = () => {
 
 	const sliderRef = useRef(null)
 
-	const maskClasses = [
-		style.secondSlider_imageBg_1,
-		style.secondSlider_imageBg_2,
-		style.secondSlider_imageBg_3,
-		style.secondSlider_imageBg_4,
-		style.secondSlider_imageBg_5,
-		style.secondSlider_imageBg_3,
-		style.secondSlider_imageBg_2,
-		style.secondSlider_imageBg_1,
-		style.secondSlider_imageBg_5,
-		style.secondSlider_imageBg_4,
-	]
+	const maskClasses = [style.secondSlider_imageBg_1, style.secondSlider_imageBg_2, style.secondSlider_imageBg_3, style.secondSlider_imageBg_4, style.secondSlider_imageBg_5, style.secondSlider_imageBg_3, style.secondSlider_imageBg_2, style.secondSlider_imageBg_1, style.secondSlider_imageBg_5, style.secondSlider_imageBg_4]
 
 	const settings = {
 		dots: false,
@@ -76,15 +64,14 @@ export const SecondSlider = () => {
 		draggable: false,
 		arrows: false,
 		centerMode: true,
-		centerPadding: "100px",
+		centerPadding: "120px",
 		className: "center",
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		speed: 600,
 		afterChange: current => setCurrentPosition(current + 1)
 	};
-	const isFirstSlide = currentPosition === 1
-	const isLastSlide = sliderData && currentPosition === sliderData.length
+
 	const isOnlyOneSlide = sliderData && sliderData.length > 1
 
 	// const articleData = async () => {
@@ -115,28 +102,23 @@ export const SecondSlider = () => {
 						{sliderData &&
 							sliderData.map((c, id) => {
 								const isCenter = currentPosition === id + 1
-								if (isCenter) {
-									console.log(c.slideTitle);
-								}
+
 								return (
 									<div key={id}>
 										<div className={style.secondSlider_item} style={{ backgroundColor: `${c.sliderBgColor}` }} >
 											<div className={style.secondSlider_centeredBg}
-												style={{
-													transform: isCenter ? 'scale(1.15)' : 'scale(0.1)',
-												}}>
+												style={{ transform: isCenter ? 'scale(1.15) scaleX(0.95)' : 'scale(0.1)' }}>
 												<Image src={I.centeredBgSlide} />
 											</div>
 
-											<div
-												className={`${maskClasses[id]} ${style.shiftCentered}`}
+											<div className={`${maskClasses[id]} ${style.shiftCentered}`}
 												style={{
 													transform: !isCenter ? 'scale(1.1) translate(0px, 0px)' : 'scale(0.7) translate(-140px, -140px)',
-												}}
-											>
+													filter: isCenter ? 'brightness(1)' : 'brightness(0.7)',
+
+												}}>
 												<Image src={c.slideImage} layout='fill' />
 											</div>
-
 
 											<div className={style.secondSlider_item_col}>
 												<h2 className={style.secondSlider_item_col_title}
@@ -147,10 +129,8 @@ export const SecondSlider = () => {
 													style={{ opacity: isCenter ? 1 : 0, }}	>
 													{c.slideText}
 												</p>
-
 											</div>
 										</div>
-
 									</div>
 								)
 							})}

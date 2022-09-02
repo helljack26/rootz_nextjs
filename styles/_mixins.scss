@@ -181,3 +181,9 @@
     line-height: 24px;
     color: $cBlack;
 }
+@mixin plainText13() {
+    font-family: $fRegular;
+    font-size: 13px;
+    line-height: 24px;
+    color: $cBlack;
+}
