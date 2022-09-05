@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import Image from 'next/image'
 import Link from 'next/link'
 import { isOnTop } from './helpers/isOnTop';
 import { detectActiveLink } from './helpers/detectActiveLink';
@@ -8,14 +7,12 @@ import style from '../styles/main.module.scss';
 
 import { menuData } from '../res/menuLinks';
 
-
 export const SideMenu = ({ isSideMenuOpen, openSideMenu }) => {
     const sideMenuRef = useRef(null);
     const { onTop, y } = isOnTop()
     const activeLink = detectActiveLink({ y: y })
 
     const [isAnimateBackground, setAnimateBackground] = useState(false);
-    const [isActiveLink, setActiveLink] = useState('Home');
 
     useEffect(() => {
         if (isSideMenuOpen) {
@@ -26,12 +23,6 @@ export const SideMenu = ({ isSideMenuOpen, openSideMenu }) => {
             setAnimateBackground(false)
         }
     }, [isSideMenuOpen]);
-
-    const scrollTo = (hash) => {
-        document.body.classList.remove("no_scroll")
-        openSideMenu(false)
-        setActiveLink(hash)
-    }
 
     return (
         <>
@@ -49,7 +40,10 @@ export const SideMenu = ({ isSideMenuOpen, openSideMenu }) => {
                                 scroll={true}
                                 key={id}>
                                 <a
-                                    onClick={() => { scrollTo({ linkName }) }}
+                                    onClick={() => {
+                                        document.body.classList.remove("no_scroll")
+                                        openSideMenu(false)
+                                    }}
                                     className={activeLink === id ? style.sideMenu_navlink_active : null}
                                 >{linkName}
                                 </a>
