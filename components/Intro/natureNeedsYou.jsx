@@ -10,7 +10,9 @@ export const NatureNeedsYou = () => {
 
     return (
         <div className={style.natureNeedsYou_container}>
-            <Image src={I.natureNeedsYou} alt="Nature needs you calligraphy" priority />
+            <div className={style.natureNeedsYou_img}>
+                <Image src={I.natureNeedsYou} alt="Nature needs you calligraphy" priority />
+            </div>
 
             <p className={style.natureNeedsYou_text} >
                 The scale of the challenges facing our planet can

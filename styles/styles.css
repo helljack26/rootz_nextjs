@@ -11,8 +11,8 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
-    background: linear-gradient(180deg, #ffffff, #ffffff);
+    background: #F7F3F4;
+    background: #F7F3F4;
     border-radius: 4px;
 }
 

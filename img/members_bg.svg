@@ -1,10 +1,23 @@
-<svg width="272" height="320" viewBox="0 0 272 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="mask0_1193_341" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="272" height="320">
-<path d="M0 50C0 22.3858 22.3858 0 50 0H222C249.614 0 272 22.3858 272 50V270C272 297.614 249.614 320 222 320H50C22.3858 320 0 297.614 0 270V50Z" fill="#C4C4C4"/>
-</mask>
-<g mask="url(#mask0_1193_341)">
-<rect x="-19" y="-23" width="304" height="360" fill="#FAA881"/>
-<path d="M12.8503 230.393C-74.7507 252.02 -162.074 203.026 -182.328 120.985C-202.582 38.9433 -148.094 -45.0607 -60.4925 -66.6876L256.718 -145C297.566 20.4601 188.053 187.139 12.8503 230.393Z" fill="#F26C74"/>
-<path d="M298.197 289.365C349.266 363.753 334.134 462.732 264.467 510.56C194.8 558.388 96.9947 536.944 45.9254 462.556L-139 193.191C1.5034 96.7315 196.059 140.589 298.197 289.365Z" fill="#7675FD"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 272 320" style="enable-background:new 0 0 272 320;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_2_);fill:#FAA881;}
+	.st1{clip-path:url(#SVGID_2_);fill:#F26C74;}
+	.st2{clip-path:url(#SVGID_2_);fill:#7675FD;}
+</style>
+<g>
+	<defs>
+		<path id="SVGID_1_" d="M0,320V0h272v320H0z"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<rect x="-19" y="-23" class="st0" width="304" height="360"/>
+	<path class="st1" d="M12.9,230.4C-74.8,252-162.1,203-182.3,121c-20.3-82,34.2-166,121.8-187.7L256.7-145
+		C297.6,20.5,188.1,187.1,12.9,230.4z"/>
+	<path class="st2" d="M298.2,289.4c51.1,74.4,35.9,173.4-33.7,221.2S97,536.9,45.9,462.6L-139,193.2
+		C1.5,96.7,196.1,140.6,298.2,289.4z"/>
 </g>
 </svg>

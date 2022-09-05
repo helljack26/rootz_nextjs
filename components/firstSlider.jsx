@@ -44,7 +44,15 @@ export const FirstSlider = () => {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		speed: 600,
-		afterChange: current => setCurrentPosition(current + 1)
+		afterChange: current => setCurrentPosition(current + 1),
+		responsive: [{
+			breakpoint: 768,
+			settings: {
+				draggable: true,
+				infinite: true,
+			}
+		}]
+
 	};
 	const isFirstSlide = currentPosition === 1
 	const isLastSlide = sliderData && currentPosition === sliderData.length
@@ -110,6 +118,22 @@ export const FirstSlider = () => {
 								)
 							})}
 					</Slider>
+
+					<div className={style.firstSlider_dots}>
+						<div className={style.firstSlider_dots_row}>
+							{sliderData.map((c, id) => {
+								const isActive = id === currentPosition - 1
+								return (
+									<button type='button'
+										onClick={() => {
+											(sliderRef.current).slickGoTo(id, false)
+										}}
+										className={isActive && style.firstSlider_dots_active} key={id} >
+									</button>
+								)
+							})}
+						</div>
+					</div>
 				</div>
 			</section >
 		</>

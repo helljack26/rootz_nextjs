@@ -76,7 +76,7 @@ export const ReadyAccordion = () => {
 						Ready To Get Started?
 					</h2>
 					<p >
-						When pattern is mentioned in interior design, it is easy to asso- ciate it with a geometric patterned wallpaper or colourful prints on interior fabrics.
+						When pattern is mentioned in interior design, it is easy to associate it with a geometric patterned wallpaper or colourful prints on interior fabrics.
 					</p>
 					<button type="button">
 						Contact us

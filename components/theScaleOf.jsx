@@ -32,7 +32,9 @@ export const TheScaleOf = () => {
                     return (
                         <div key={id}>
                             <div className={style.scaleOf_row_item}  >
-                                <Image src={scaleItem.scaleIcon} width={65} height={65} />
+                                <div className={style.scaleOf_row_item_img}  >
+                                    <Image src={scaleItem.scaleIcon} width={65} height={65} />
+                                </div>
 
                                 <span className={style.scaleOf_row_item_text}>
                                     {scaleItem.scaleText}
@@ -54,6 +56,10 @@ export const TheScaleOf = () => {
 
             <span className={style.scale_leafs_right}>
                 <Image src={I.scaleLeafsRight} />
+            </span>
+
+            <span className={style.scale_leafs_mobile}>
+                <Image src={I.scaleLeafsMobile} />
             </span>
         </div>
     );
