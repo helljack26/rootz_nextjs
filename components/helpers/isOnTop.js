@@ -14,13 +14,13 @@ export const isOnTop = () => {
             if (window.scrollY < 10) {
                 return setResult({
                     onTop: true,
-                    y: y
+                    y: window.scrollY
                 })
 
             } else {
                 return setResult({
                     onTop: false,
-                    y: y
+                    y: window.scrollY
                 })
             }
         }, [y]

@@ -2,14 +2,18 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
 import { isOnTop } from './helpers/isOnTop';
+import { detectActiveLink } from './helpers/detectActiveLink';
 
 import style from '../styles/main.module.scss';
 
-import I from '../img/images'
+import { menuData } from '../res/menuLinks';
+
 
 export const SideMenu = ({ isSideMenuOpen, openSideMenu }) => {
     const sideMenuRef = useRef(null);
-    const { onTop } = isOnTop()
+    const { onTop, y } = isOnTop()
+    const activeLink = detectActiveLink({ y: y })
+
     const [isAnimateBackground, setAnimateBackground] = useState(false);
     const [isActiveLink, setActiveLink] = useState('Home');
 
@@ -28,6 +32,7 @@ export const SideMenu = ({ isSideMenuOpen, openSideMenu }) => {
         openSideMenu(false)
         setActiveLink(hash)
     }
+
     return (
         <>
             <div className={`${style.sideMenu_bg} ${isAnimateBackground ? style.sideMenu_Bg_Open : null} `}
@@ -35,29 +40,27 @@ export const SideMenu = ({ isSideMenuOpen, openSideMenu }) => {
             <div className={`${style.sideMenu} ${isSideMenuOpen ? style.sideMenuOpen : null} ${onTop ? style.sideMenuDefault : style.sideMenuExpand}`}>
 
                 <nav className={style.sideMenu_nav} ref={sideMenuRef}>
-                    <Link href="#home" scroll={true}><a
-                        onClick={() => { scrollTo('Home') }}
-                        className={isActiveLink === 'Home' ? style.sideMenu_navlink_active : null}
-                    >Home</a></Link>
-                    <Link href="#ourMission" scroll={true}><a
-                        onClick={() => { scrollTo('Our mission') }}
-                        className={isActiveLink === 'Our mission' ? style.sideMenu_navlink_active : null}
-                    >Our mission</a></Link>
-                    <Link href="#places" scroll={true}><a
-                        onClick={() => { scrollTo('Places') }}
-                        className={isActiveLink === 'Places' ? style.sideMenu_navlink_active : null}
-                    >Places</a></Link>
-                    <Link href="#team" scroll={true}><a
-                        onClick={() => { scrollTo('Team') }}
-                        className={isActiveLink === 'Team' ? style.sideMenu_navlink_active : null}
-                    >Team</a></Link>
+
+                    {menuData.map((link, id) => {
+                        const { linkHash, linkName } = link;
+                        return (
+                            <Link
+                                href={linkHash}
+                                scroll={true}
+                                key={id}>
+                                <a
+                                    onClick={() => { scrollTo({ linkName }) }}
+                                    className={activeLink === id ? style.sideMenu_navlink_active : null}
+                                >{linkName}
+                                </a>
+                            </Link>
+                        )
+                    })}
                 </nav>
 
                 <button type='button' className={style.sideMenu_header_button}>
                     Apply
                 </button>
-
-
             </div >
         </>
 

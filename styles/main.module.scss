@@ -75,7 +75,8 @@
                 }
             }
             .navlink_active {
-                font-family: $fBold;
+                -webkit-text-stroke: 1px black;
+
                 transition: all 0.3s ease-in-out;
                 opacity: 1;
             }
@@ -206,7 +207,8 @@
                 }
             }
             .sideMenu_navlink_active {
-                font-family: $fBold;
+                // font-family: $fBold;
+                -webkit-text-stroke: 1px black;
                 transition: all 0.3s ease-in-out;
                 opacity: 1;
             }
@@ -289,6 +291,7 @@
         padding-bottom: 128px;
         min-height: 100vh;
     }
+    scroll-behavior: smooth;
     width: 100%;
     min-height: 90vh;
     display: grid;
@@ -605,6 +608,7 @@
     @media screen and (min-width: 1500px) {
         transform: scale(1.2) translateY(40px);
     }
+    scroll-behavior: smooth;
     display: grid;
     grid-template-columns: repeat(3, 320px);
     justify-content: space-between;
@@ -612,13 +616,12 @@
     width: 100%;
     max-width: 1120px;
     margin: 0 auto;
-    padding-top: 60px;
-    padding-bottom: 190px;
+    padding-top: 80px;
     column-gap: 55px;
     @media screen and (max-width: 1200px) {
         justify-content: center;
         column-gap: 3vw;
-        padding-bottom: 170px;
+        padding-top: 80px;
     }
     @media screen and (max-width: 1100px) {
         display: flex;
@@ -628,23 +631,14 @@
         flex-direction: row;
         row-gap: 40px;
     }
-    @media screen and (max-width: 992px) {
-        padding-bottom: 150px;
-    }
-    @media screen and (max-width: 768px) {
-        padding-bottom: 130px;
-    }
+
     @media screen and (max-width: 650px) {
         flex-direction: column;
         align-items: flex-start;
         padding: 0px 6vw;
-        padding-top: 55px;
-        padding-bottom: 130px;
+        padding-top: 80px;
     }
-    @media screen and (max-width: 576px) {
-        padding-top: 55px;
-        padding-bottom: 100px;
-    }
+
     .article {
         display: flex;
         flex-direction: row;
@@ -771,6 +765,21 @@
 }
 
 .firstSlider {
+    scroll-behavior: smooth;
+    padding-top: 100px;
+    padding-bottom: 92px;
+    @media screen and (max-width: 1200px) {
+        padding-bottom: 92px;
+    }
+    @media screen and (max-width: 992px) {
+        padding-bottom: 62px;
+    }
+    @media screen and (max-width: 768px) {
+        padding-bottom: 32px;
+    }
+    @media screen and (max-width: 576px) {
+        padding-bottom: 8px;
+    }
     .slider_controls_left {
         position: absolute;
         top: calc(50% - 22px);
@@ -974,26 +983,19 @@
 }
 
 .ourTeam {
+    scroll-behavior: smooth;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0px 8.7vw;
-    padding-top: 192px;
+    padding-top: 100px;
     overflow: hidden;
 
     @media screen and (max-width: 1200px) {
         padding: 0px 0px;
-        padding-top: 192px;
+        padding-top: 100px;
     }
-    @media screen and (max-width: 992px) {
-        padding-top: 162px;
-    }
-    @media screen and (max-width: 768px) {
-        padding-top: 132px;
-    }
-    @media screen and (max-width: 576px) {
-        padding-top: 108px;
-    }
+
     .ourTeam_title {
         @include headerBold40;
         margin-bottom: 14px;

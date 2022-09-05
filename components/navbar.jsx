@@ -4,13 +4,15 @@ import Link from 'next/link'
 
 import style from '../styles/main.module.scss';
 import { isOnTop } from './helpers/isOnTop';
+import { detectActiveLink } from './helpers/detectActiveLink';
+import { menuData } from '../res/menuLinks';
 
 import I from '../img/images'
 
 export const Navbar = ({ isSideMenuOpen, openSideMenu }) => {
     const { onTop, y } = isOnTop()
-    const home = document.getElementById('home')
-    console.log("🚀 ~ file: navbar.jsx ~ line 13 ~ Navbar ~ home", home)
+    const activeLink = detectActiveLink({ y: y })
+
     return (
         <header className={`${style.header} ${onTop ? style.defaultHeader : style.expandedHeader}`}>
             <div className={style.header_block}>
@@ -22,16 +24,26 @@ export const Navbar = ({ isSideMenuOpen, openSideMenu }) => {
                 />
 
                 <nav className={style.nav}>
-                    <Link href={'/'}><a className={style.navlink_active}>Home</a></Link>
-                    <Link href={'/'}><a>Our mission</a></Link>
-                    <Link href={'/'}><a>Places</a></Link>
-                    <Link href={'/'}><a>Team</a></Link>
+
+                    {menuData.map((link, id) => {
+                        const { linkHash, linkName } = link;
+                        return (
+                            <Link
+                                href={linkHash}
+                                scroll={false}
+                                key={id}
+                            >
+                                <a
+                                    className={activeLink === id ? style.navlink_active : null}>
+                                    {linkName}
+                                </a>
+                            </Link>
+                        )
+                    })}
                 </nav>
 
                 <button type='button' className={style.header_button}
-                    style={{
-                        transform: y > 10 ? 'scale(0.75)' : 'scale(1)'
-                    }}
+                    style={{ transform: y > 10 ? 'scale(0.75)' : 'scale(1)' }}
                 >
                     Apply
                 </button>
