@@ -77,18 +77,18 @@ export const FirstSlider = () => {
 
 	return (
 		<>
-			<section className={style.firstSlider}>
+			<section id='places' className={style.firstSlider}>
 
 				<div className={style.firstSlider_block}>
 					{isOnlyOneSlide &&
 						<>
 							<button
-								className={`${style.slider_controls_left} ${isFirstSlide && style.slider_controls_disable}`}
+								className={`${style.slider_controls_left} ${isFirstSlide ? style.slider_controls_disable : null}`}
 								onClick={() => { (sliderRef.current).slickPrev(); }}>
 								<Image src={I.sliderArrow} width={24} height={44} priority />
 							</button>
 							<button
-								className={`${style.slider_controls_right} ${isLastSlide && style.slider_controls_disable}`}
+								className={`${style.slider_controls_right} ${isLastSlide ? style.slider_controls_disable : null}`}
 								onClick={() => { (sliderRef.current).slickNext(); }}>
 								<Image src={I.sliderArrow} width={24} height={44} priority />
 							</button>
@@ -128,7 +128,7 @@ export const FirstSlider = () => {
 										onClick={() => {
 											(sliderRef.current).slickGoTo(id, false)
 										}}
-										className={isActive && style.firstSlider_dots_active} key={id} >
+										className={isActive ? style.firstSlider_dots_active : null} key={id} >
 									</button>
 								)
 							})}

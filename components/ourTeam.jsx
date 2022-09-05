@@ -25,7 +25,7 @@ const teamData = [
 export const OurTeam = () => {
 
     return (
-        <div className={style.ourTeam}>
+        <div id='team' className={style.ourTeam}>
             <h2 className={style.ourTeam_title}>Our Top Team</h2>
             <p className={style.ourTeam_text}>Learn more about how you can save our planet's nature. </p>
 

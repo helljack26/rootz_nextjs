@@ -29,7 +29,7 @@ const blog = [
 export const Blog = () => {
 
     return (
-        <div className={style.blog}>
+        <div id='ourMission' className={style.blog}>
             {blog.map((article, id) => {
                 const { articleImg, articleVideoLink, articleHash, articleTitle } = article;
 
@@ -38,7 +38,6 @@ export const Blog = () => {
 
                         <div className={articleVideoLink ? style.article_video : style.article_image}>
                             <Image src={articleImg} alt={articleTitle} priority />
-
                             {articleVideoLink && <button type='button' className={style.article_video_playBtn}></button>}
                         </div>
 

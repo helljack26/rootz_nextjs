@@ -3,36 +3,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import style from '../styles/main.module.scss';
+import { isOnTop } from './helpers/isOnTop';
 
 import I from '../img/images'
 
-export const Navbar = () => {
-
-    const [y, setY] = useState(0);
-    const [height, setHeight] = useState(style.defaultHeader);
-
-    const handleNavigation = useCallback(
-        e => {
-            const window = e.currentTarget;
-            if (window.scrollY < 10) {
-                setHeight(style.defaultHeader)
-            } else {
-                setHeight(style.expandedHeader)
-            }
-            setY(window.scrollY);
-        }, [y]
-    );
-
-    useEffect(() => {
-        setY(window.scrollY);
-        window.addEventListener("scroll", handleNavigation);
-
-        return () => {
-            window.removeEventListener("scroll", handleNavigation);
-        };
-    }, [handleNavigation]);
+export const Navbar = ({ isSideMenuOpen, openSideMenu }) => {
+    const { onTop, y } = isOnTop()
+    const home = document.getElementById('home')
+    console.log("🚀 ~ file: navbar.jsx ~ line 13 ~ Navbar ~ home", home)
     return (
-        <header className={`${style.header} ${height}`}>
+        <header className={`${style.header} ${onTop ? style.defaultHeader : style.expandedHeader}`}>
             <div className={style.header_block}>
                 <Image
                     className={style.logo}
@@ -55,8 +35,16 @@ export const Navbar = () => {
                 >
                     Apply
                 </button>
-            </div>
 
-        </header>
+                <button
+                    onClick={() => { openSideMenu(!isSideMenuOpen) }}
+                    type='button' className={style.header_burgerBtn}>
+                    <span className={isSideMenuOpen ? style.burgerBtn_open : null}></span>
+                    <span className={isSideMenuOpen ? style.burgerBtn_open : null}></span>
+                    <span className={isSideMenuOpen ? style.burgerBtn_open : null}></span>
+                </button >
+            </div >
+
+        </header >
     );
 };
