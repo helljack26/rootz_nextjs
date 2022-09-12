@@ -1,6 +1,5 @@
-import { useState, useEffect, useCallback } from 'react';
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 import style from '../styles/main.module.scss';
 import { isOnTop } from './helpers/isOnTop';
@@ -8,14 +7,28 @@ import { detectActiveLink } from './helpers/detectActiveLink';
 import { menuData } from '../res/menuLinks';
 
 import I from '../img/images'
+import GlobalState from '../stores/GlobalState'
+import { observer } from 'mobx-react'
 
-export const Navbar = ({ isSideMenuOpen, openSideMenu }) => {
-    const { onTop, y } = isOnTop()
-    const activeLink = detectActiveLink({ y: y })
+export const Navbar = observer(({ isSideMenuOpen, openSideMenu }) => {
+    const scrollY = GlobalState.locoScroll
+    const scroll = GlobalState.scroll
+    const { onTop } = isOnTop(scrollY)
+    const activeLink = detectActiveLink({ y: scrollY })
+    const [isShowMenu, setShowMenu] = useState(false);
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            setShowMenu(true)
+        }
+    }, []);
+
 
     return (
-        <header className={`${style.header} ${onTop ? style.defaultHeader : style.expandedHeader}`}>
-            <div className={style.header_block}>
+        <header className={`${style.header} ${onTop ? style.defaultHeader : style.expandedHeader}`}
+
+            data-scroll-sticky>
+            <div className={`${style.header_block} header_block`}>
                 <Image
                     className={style.logo}
                     src={I.logo}
@@ -24,26 +37,24 @@ export const Navbar = ({ isSideMenuOpen, openSideMenu }) => {
                 />
 
                 <nav className={style.nav}>
+                    {isShowMenu &&
+                        menuData.map((link, id) => {
+                            const { linkHash, linkName } = link;
+                            let hash = document.querySelector(`${linkHash}`)
 
-                    {menuData.map((link, id) => {
-                        const { linkHash, linkName } = link;
-                        return (
-                            <Link
-                                href={linkHash}
-                                scroll={false}
-                                key={id}
-                            >
-                                <a
-                                    className={activeLink === id ? style.navlink_active : null}>
+                            return (
+                                <a key={id} onClick={() => { scroll.scrollTo(hash) }}
+                                    className={activeLink === id ? style.navlink_active : ''}>
                                     {linkName}
                                 </a>
-                            </Link>
-                        )
-                    })}
+                            )
+                        })
+
+                    }
                 </nav>
 
                 <button type='button' className={style.header_button}
-                    style={{ transform: y > 10 ? 'scale(0.75)' : 'scale(1)' }}
+                    style={{ transform: scrollY > 10 ? 'scale(0.75)' : 'scale(1)' }}
                 >
                     Apply
                 </button>
@@ -59,4 +70,4 @@ export const Navbar = ({ isSideMenuOpen, openSideMenu }) => {
 
         </header >
     );
-};
+})

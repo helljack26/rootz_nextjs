@@ -29,7 +29,7 @@ const blog = [
 export const Footer = () => {
 
     return (
-        <footer className={style.footer}>
+        <footer className={style.footer} data-scroll-section>
 
             <div className={style.footer_col}>
                 <h4>Contacts</h4>

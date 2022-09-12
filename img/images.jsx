@@ -5,6 +5,11 @@ import membersBg from './members_bg.svg'
 import membersIcon from './icons/members_icon.svg'
 import parrot from './parrot.svg'
 import leafs from './leafs.svg'
+import leafs1 from './intro/leafs_1.svg'
+import leafs2 from './intro/leafs_2.svg'
+import leafs3 from './intro/leafs_3.svg'
+import leafs4 from './intro/leafs_4.svg'
+import leafs5 from './intro/leafs_5.svg'
 // Blog
 import post1 from './post1.png'
 import post2 from './post_video2.png'
@@ -56,6 +61,11 @@ const I = {
     membersIcon: membersIcon,
     parrot: parrot,
     leafs: leafs,
+    leafs1: leafs1,
+    leafs2: leafs2,
+    leafs3: leafs3,
+    leafs4: leafs4,
+    leafs5: leafs5,
     // Blog
     post1: post1,
     post2: post2,

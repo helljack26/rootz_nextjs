@@ -34,7 +34,7 @@ export const GetStartedForm = () => {
 
 	return (
 		<>
-			<div className={style.getStartedForm} >
+			<div className={style.getStartedForm} data-scroll-section>
 				<div className={style.getStartedForm_col}>
 					<h2 >Get Started Today!</h2>
 					<p >

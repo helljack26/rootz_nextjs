@@ -21,10 +21,10 @@ const theScaleOfData = [
 export const TheScaleOf = () => {
 
     return (
-        <div className={style.scaleOf}>
+        <div className={style.scaleOf} data-scroll-section>
             <h2 className={style.scaleOf_title}>
-                The scale of the challenges facing our planet can
-                seem daunting, but we can all do something.
+                The scale of the challenges facing our planet
+                can seem daunting, but we can all do something.
             </h2>
 
             <div className={style.scaleOf_row}>

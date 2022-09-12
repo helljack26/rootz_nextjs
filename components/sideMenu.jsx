@@ -27,7 +27,7 @@ export const SideMenu = ({ isSideMenuOpen, openSideMenu }) => {
     return (
         <>
             <div className={`${style.sideMenu_bg} ${isAnimateBackground ? style.sideMenu_Bg_Open : null} `}
-                onClick={() => { openSideMenu(false) }}></div>
+                onClick={() => { openSideMenu(false) }} data-scroll-section></div>
             <div className={`${style.sideMenu} ${isSideMenuOpen ? style.sideMenuOpen : null} ${onTop ? style.sideMenuDefault : style.sideMenuExpand}`}>
 
                 <nav className={style.sideMenu_nav} ref={sideMenuRef}>

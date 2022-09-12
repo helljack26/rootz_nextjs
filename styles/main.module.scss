@@ -17,9 +17,8 @@
     position: fixed;
     top: 0px;
     left: 0px;
-    right: 0px;
     z-index: 999;
-    width: 100vw;
+    width: calc(100vw - 16px);
     transition: all 0.8s ease;
     background: linear-gradient(0deg, #f7f3f4, #f7f3f4), linear-gradient(0deg, #febd2f, #febd2f),
         radial-gradient(178.57% 327.71% at 110.1% 3.35%, #ff605b 0%, #ffee30 100%), #27d07d;
@@ -33,6 +32,7 @@
         flex-direction: row;
         height: 100%;
         border-bottom: 4px solid $cBorder;
+        opacity: 1;
         .nav {
             display: flex;
             justify-content: space-between;
@@ -340,6 +340,8 @@
         padding-bottom: 0px;
     }
     .natureNeedsYou_container {
+        opacity: 1;
+
         @media screen and (min-width: 1500px) {
             transform: scale(1.15) translateX(30px);
             margin-top: 50px;
@@ -368,6 +370,7 @@
             padding-top: 60px;
             padding-bottom: 45px;
             padding-right: 30px;
+
             @media screen and (max-width: 1370px) {
                 padding-top: 40px;
                 padding-bottom: 35px;
@@ -497,14 +500,22 @@
         @media (max-width: 450px) {
             transform: scale(1.2) translateX(120px) translateY(35px);
         }
-        @media (max-width: 400px) {
-        }
 
         .membersAndParrot_leafs_block {
             position: absolute;
             top: 0px;
             right: -35px;
             z-index: 1;
+            transform: rotate(0deg);
+            opacity: 1;
+        }
+        .membersAndParrot_leafs_block_animation {
+            position: absolute;
+            top: 120px;
+            right: 200px;
+            z-index: 1;
+            filter: grayscale(1);
+            transition: all 0.3s ease-in-out;
         }
 
         .membersAndParrot_parrot_block {
@@ -512,6 +523,7 @@
             top: 70px;
             right: 50px;
             z-index: 2;
+
             @media screen and (max-width: 450px) {
                 top: 50px;
                 width: 340px;
@@ -521,12 +533,48 @@
                 right: 60px;
             }
         }
+        .membersAndParrot_leafs_block_container {
+            position: relative;
+            min-width: 433px;
+            min-height: 186px;
+            display: block;
+        }
+        .membersAndParrot_leafs {
+            filter: grayscale(1);
+        }
+
+        .membersAndParrot_leafs1 {
+            position: absolute;
+            top: 0px;
+            right: 160px;
+        }
+        .membersAndParrot_leafs2 {
+            position: absolute;
+            top: 30px;
+            right: 0px;
+        }
+        .membersAndParrot_leafs3 {
+            position: absolute;
+            top: 215px;
+            right: 35px;
+        }
+        .membersAndParrot_leafs4 {
+            position: absolute;
+            top: 350px;
+            right: 90px;
+        }
+        .membersAndParrot_leafs5 {
+            position: absolute;
+            top: 410px;
+            right: 150px;
+        }
         .members_container {
             position: absolute;
             top: 292px;
             right: 190px;
             z-index: 3;
             width: 272px;
+            opacity: 1;
             height: 330px;
             background-position: center;
             background-repeat: no-repeat;
@@ -537,7 +585,6 @@
             display: flex;
             justify-content: space-between;
             flex-direction: column;
-            transition: all 0.3s ease-in-out;
             @media screen and (max-width: 992px) {
                 right: 130px;
             }
@@ -618,6 +665,7 @@
     margin: 0 auto;
     padding-top: 80px;
     column-gap: 55px;
+
     @media screen and (max-width: 1200px) {
         justify-content: center;
         column-gap: 3vw;
@@ -768,6 +816,8 @@
     scroll-behavior: smooth;
     padding-top: 100px;
     padding-bottom: 92px;
+    background-color: white;
+
     @media screen and (max-width: 1200px) {
         padding-bottom: 92px;
     }

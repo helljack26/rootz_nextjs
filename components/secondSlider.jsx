@@ -84,7 +84,7 @@ export const SecondSlider = () => {
 
   return (
     <>
-      <section className={style.secondSlider}>
+      <section className={style.secondSlider} data-scroll-section>
         <div className={style.secondSlider_block}>
 
           <Slider

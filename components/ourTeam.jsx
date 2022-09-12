@@ -25,7 +25,7 @@ const teamData = [
 export const OurTeam = () => {
 
     return (
-        <div id='team' className={style.ourTeam}>
+        <div id='team' className={style.ourTeam} data-scroll-section>
             <h2 className={style.ourTeam_title}>Our Top Team</h2>
             <p className={style.ourTeam_text}>Learn more about how you can save our planet's nature. </p>
 

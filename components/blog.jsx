@@ -29,7 +29,7 @@ const blog = [
 export const Blog = () => {
 
     return (
-        <div id='ourMission' className={style.blog}>
+        <div id='ourMission' className={style.blog} data-scroll-section>
             {blog.map((article, id) => {
                 const { articleImg, articleVideoLink, articleHash, articleTitle } = article;
 

@@ -77,7 +77,7 @@ export const FirstSlider = () => {
 
 	return (
 		<>
-			<section id='places' className={style.firstSlider}>
+			<section id='places' className={style.firstSlider} data-scroll-section>
 
 				<div className={style.firstSlider_block}>
 					{isOnlyOneSlide &&

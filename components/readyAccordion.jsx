@@ -70,7 +70,7 @@ export const ReadyAccordion = () => {
 
 	return (
 		<>
-			<div className={style.readyAccordion} >
+			<div className={style.readyAccordion} data-scroll-section>
 				<div className={style.readyAccordion_col}>
 					<h2 >
 						Ready To Get Started?
