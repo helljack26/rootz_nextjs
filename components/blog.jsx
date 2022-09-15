@@ -29,12 +29,20 @@ const blog = [
 export const Blog = () => {
 
     return (
-        <div id='ourMission' className={style.blog} data-scroll-section>
+        <div id='ourMission' className={style.blog}
+            data-scroll-section
+        >
             {blog.map((article, id) => {
                 const { articleImg, articleVideoLink, articleHash, articleTitle } = article;
 
                 return (
-                    <div className={style.article} key={id}>
+                    <div className={style.article} key={id}
+                        data-scroll
+                        data-scroll-delay={`${id + 1}`}
+                        data-scroll-speed={0.5}
+                        data-scroll-position="top"
+                        data-scroll-direction="vertical"
+                    >
 
                         <div className={articleVideoLink ? style.article_video : style.article_image}>
                             <Image src={articleImg} alt={articleTitle} priority />
@@ -48,7 +56,7 @@ export const Blog = () => {
 
                             <span className={style.article_info_title}>{articleTitle}</span>
 
-                            <Link href={'/'}><a className={style.article_info_link}>see more</a></Link>
+                            <a className={style.article_info_link}>see more</a>
                         </div>
                     </div>
                 )

@@ -65,26 +65,19 @@ export const SecondSlider = () => {
 
   const isMoreThanOneSlide = sliderData && sliderData.length > 1
 
-  // const articleData = async () => {
-  // }
-
   if (sliderData.length === 0) {
     setState(firstSliderData)
-    // const blog = await api.blog.getBlog();
-    // if (blog) {
-    // 	setState(withoutCurrent)
-    // }
   }
 
-  // if (sliderData) {
-  // 	if (sliderData.length === 0) {
-  // 		return <></>
-  // 	}
-  // }
-
   return (
-    <>
-      <section className={style.secondSlider} data-scroll-section>
+    <div data-scroll-section>
+      <section className={style.secondSlider}
+        data-scroll
+        data-scroll-delay={0.5}
+        data-scroll-speed={0.2}
+        data-scroll-position="top"
+        data-scroll-direction="vertical"
+      >
         <div className={style.secondSlider_block}>
 
           <Slider
@@ -142,7 +135,7 @@ export const SecondSlider = () => {
           </div>
         }
       </section >
-    </>
+    </div>
   )
 }
 

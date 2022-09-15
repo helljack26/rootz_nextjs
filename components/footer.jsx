@@ -1,37 +1,25 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRef } from "react";
 
 import style from '../styles/main.module.scss';
 
 import I from '../img/images'
+import { observer } from 'mobx-react'
 
-const blog = [
-    {
-        footer_Id: 1,
-        footer_Img: I.post1,
-        footer_Hash: 'Stories',
-        footer_Title: 'Travel In Japan: The True Experience',
-    },
-    {
-        footer_Id: 2,
-        articleImg: I.post2,
-        articleVideoLink: 'https://www.youtube.com/watch?v=q9XAUBwTS7Y',
-        articleHash: 'VideoTutor',
-        articleTitle: 'Helping Wild Turtles',
-    },
-    {
-        articleId: 3,
-        articleImg: I.post3,
-        articleHash: 'Photostory',
-        articleTitle: 'Threats of Indusrial World',
-    },
-]
-export const Footer = () => {
+export const Footer = observer(() => {
+    const footerRef = useRef(null)
 
     return (
-        <footer className={style.footer} data-scroll-section>
 
-            <div className={style.footer_col}>
+        <footer
+            className={style.footer}
+            ref={footerRef}
+            data-scroll-section
+        >
+
+            <div className={style.footer_col}
+            >
                 <h4>Contacts</h4>
 
                 <div className={style.footer_col_text_row}>
@@ -44,7 +32,9 @@ export const Footer = () => {
                 </div>
             </div>
 
-            <div className={style.footer_col_row}>
+            <div className={style.footer_col_row}
+
+            >
 
                 <div className={style.footer_col}>
                     <span className={style.footer_col_title}>Headquarters</span>
@@ -85,4 +75,4 @@ export const Footer = () => {
 
         </footer>
     );
-};
+})

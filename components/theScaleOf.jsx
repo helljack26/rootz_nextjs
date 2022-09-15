@@ -22,12 +22,24 @@ export const TheScaleOf = () => {
 
     return (
         <div className={style.scaleOf} data-scroll-section>
-            <h2 className={style.scaleOf_title}>
+            <h2 className={style.scaleOf_title}
+                data-scroll
+                data-scroll-delay={1}
+                data-scroll-speed={0.5}
+                data-scroll-position="top"
+                data-scroll-direction="vertical"
+            >
                 The scale of the challenges facing our planet
                 can seem daunting, but we can all do something.
             </h2>
 
-            <div className={style.scaleOf_row}>
+            <div className={style.scaleOf_row}
+                data-scroll
+                data-scroll-delay={1}
+                data-scroll-speed={0.5}
+                data-scroll-position="top"
+                data-scroll-direction="vertical"
+            >
                 {theScaleOfData.map((scaleItem, id) => {
                     return (
                         <div key={id}>
@@ -50,7 +62,13 @@ export const TheScaleOf = () => {
                 <Image src={I.scaleLeafsLeft} />
             </span>
 
-            <span className={style.scale_gradient_circle}>
+            <span
+                data-scroll
+                data-scroll-delay={0.5}
+                data-scroll-speed={0.2}
+                data-scroll-position="top"
+                data-scroll-direction="vertical"
+                className={style.scale_gradient_circle}>
                 <Image src={I.scaleGradientCircle} />
             </span>
 

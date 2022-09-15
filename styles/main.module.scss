@@ -1,4 +1,4 @@
-@import "../styles/fonts";
+// @import "../styles/fonts";
 @import "../styles/mixins";
 @import "../styles/variables";
 
@@ -22,6 +22,7 @@
     transition: all 0.8s ease;
     background: linear-gradient(0deg, #f7f3f4, #f7f3f4), linear-gradient(0deg, #febd2f, #febd2f),
         radial-gradient(178.57% 327.71% at 110.1% 3.35%, #ff605b 0%, #ffee30 100%), #27d07d;
+
     div {
         height: inherit;
     }
@@ -33,6 +34,14 @@
         height: 100%;
         border-bottom: 4px solid $cBorder;
         opacity: 1;
+        .logoButton {
+            transition: all 0.5s ease-in-out;
+            &:hover {
+                opacity: 0.5;
+                transform: scale(0.94);
+            }
+        }
+
         .nav {
             display: flex;
             justify-content: space-between;
@@ -55,6 +64,7 @@
                 line-height: 24px;
                 transition: all 0.3s ease-in-out;
                 opacity: 0.8;
+                user-select: none;
                 @media screen and (max-width: 992px) {
                     font-size: 18px;
                 }
@@ -76,7 +86,6 @@
             }
             .navlink_active {
                 -webkit-text-stroke: 1px black;
-
                 transition: all 0.3s ease-in-out;
                 opacity: 1;
             }
@@ -238,6 +247,7 @@
         }
     }
 }
+
 .sideMenuOpen {
     transform: translateX(0px);
 }
@@ -277,6 +287,223 @@
 .sideMenu_Bg_Open {
     visibility: visible;
     opacity: 1;
+}
+
+.leafs_falling {
+    position: absolute;
+    top: -50px;
+    width: 100%;
+    text-align: right;
+    z-index: 1200;
+
+    i {
+        display: inline-block;
+        width: 200px;
+        height: 150px;
+        background: url(../img/intro/leafs_1.svg);
+        z-index: 1;
+        animation: falling 5s 0s infinite;
+    }
+
+    i:nth-of-type(2n) {
+        animation: falling2 5s 0s infinite;
+    }
+    i:nth-of-type(3n) {
+        animation: falling3 5s 0s infinite;
+    }
+
+    i:before {
+        position: absolute;
+        content: "";
+        top: 117px;
+        right: 9px;
+        height: 100%;
+        width: 100%;
+        transform: rotate(49deg);
+        background: url(../img/intro/leafs_2.svg);
+        z-index: 1;
+    }
+
+    i:after {
+        content: "";
+        height: 125px;
+        width: 10px;
+        display: block;
+        transform: rotate(125deg);
+        position: absolute;
+        left: 85px;
+        border-radius: 50%;
+    }
+
+    i:nth-of-type(n) {
+        height: 23px;
+        width: 30px;
+    }
+    i:nth-of-type(n):before {
+        width: 7px;
+        height: 5px;
+        top: 17px;
+        right: 1px;
+    }
+    i:nth-of-type(n):after {
+        width: 2px;
+        height: 17px;
+        left: 12px;
+        top: 0px;
+    }
+
+    i:nth-of-type(2n + 1) {
+        height: 11px;
+        width: 16px;
+    }
+    i:nth-of-type(2n + 1):before {
+        width: 4px;
+        height: 3px;
+        top: 7px;
+        right: 0px;
+    }
+    i:nth-of-type(2n + 1):after {
+        width: 2px;
+        height: 6px;
+        left: 5px;
+        top: 1px;
+    }
+
+    i:nth-of-type(3n + 2) {
+        height: 17px;
+        width: 23px;
+    }
+    i:nth-of-type(3n + 2):before {
+        height: 4px;
+        width: 4px;
+        top: 12px;
+        right: 1px;
+    }
+    i:nth-of-type(3n + 2):after {
+        height: 10px;
+        width: 2px;
+        top: 1px;
+        left: 8px;
+    }
+
+    i:nth-of-type(n) {
+        animation-delay: 1.9s;
+    }
+    i:nth-of-type(2n) {
+        animation-delay: 3.9s;
+    }
+    i:nth-of-type(3n) {
+        animation-delay: 2.3s;
+    }
+    i:nth-of-type(4n) {
+        animation-delay: 4.4s;
+    }
+    i:nth-of-type(5n) {
+        animation-delay: 5s;
+    }
+    i:nth-of-type(6n) {
+        animation-delay: 3.5s;
+    }
+    i:nth-of-type(7n) {
+        animation-delay: 2.8s;
+    }
+    i:nth-of-type(8n) {
+        animation-delay: 1.5s;
+    }
+    i:nth-of-type(9n) {
+        animation-delay: 3.3s;
+    }
+    i:nth-of-type(10n) {
+        animation-delay: 2.5s;
+    }
+    i:nth-of-type(11n) {
+        animation-delay: 1.2s;
+    }
+    i:nth-of-type(12n) {
+        animation-delay: 4.1s;
+    }
+    i:nth-of-type(13n) {
+        animation-delay: 1s;
+    }
+    i:nth-of-type(14n) {
+        animation-delay: 4.7s;
+    }
+    i:nth-of-type(15n) {
+        animation-delay: 3s;
+    }
+    i:nth-of-type(16n) {
+        animation-delay: 1.5s;
+    }
+    i:nth-of-type(17n) {
+        animation-delay: 3.9s;
+    }
+    i:nth-of-type(18n) {
+        animation-delay: 2s;
+    }
+
+    i:nth-of-type(n) {
+        background: url(../img/intro/leafs_5.svg);
+    }
+    i:nth-of-type(2n + 2) {
+        background: url(../img/intro/leafs_3.svg);
+    }
+    i:nth-of-type(4n + 1) {
+        background: url(../img/intro/leafs_4.svg);
+    }
+    i:nth-of-type(3n + 1) {
+        background: url(../img/intro/leafs_1.svg);
+    }
+
+    i:nth-of-type(n) {
+        opacity: 0.9;
+    }
+    i:nth-of-type(3n + 1) {
+        opacity: 0.7;
+    }
+    i:nth-of-type(3n + 2) {
+        opacity: 0.5;
+    }
+
+    i:nth-of-type(n) {
+        transform: rotate(180deg);
+    }
+
+    i:nth-of-type(n) {
+        animation-timing-function: ease-in-out;
+    }
+}
+
+@keyframes falling {
+    0% {
+        transform: translate3d(300, 0, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate3d(-350px, 700px, 0) rotate(90deg);
+        opacity: 0;
+    }
+}
+
+@keyframes falling3 {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(-20deg);
+    }
+
+    100% {
+        transform: translate3d(-230px, 640px, 0) rotate(-70deg);
+        opacity: 0;
+    }
+}
+
+@keyframes falling2 {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(90deg);
+    }
+
+    100% {
+        -webkit-transform: translate3d(-400px, 680px, 0) rotate(0deg);
+        opacity: 0;
+    }
 }
 
 .intro {
@@ -340,8 +567,6 @@
         padding-bottom: 0px;
     }
     .natureNeedsYou_container {
-        opacity: 1;
-
         @media screen and (min-width: 1500px) {
             transform: scale(1.15) translateX(30px);
             margin-top: 50px;
@@ -393,8 +618,11 @@
             width: 84%;
             border: 1px solid transparent;
             border-radius: 40px;
-            transition: all 0.3s ease-in-out;
             box-shadow: 0px 30px 40px rgba(240, 101, 126, 0.05);
+            transition: all 0.3s ease-in-out;
+            &:focus-within {
+                border: 1px solid $cOrange;
+            }
             &:focus {
                 border: 1px solid $cOrange;
             }
@@ -429,6 +657,12 @@
                 @media screen and (max-width: 450px) {
                     padding-right: 103px;
                 }
+            }
+            .search_input:active > .search_container {
+                border: 1px solid $cOrange;
+            }
+            .search_input:focus > .search_container {
+                border: 1px solid $cOrange;
             }
             .search_button {
                 @include buttonRounded;
@@ -663,7 +897,8 @@
     width: 100%;
     max-width: 1120px;
     margin: 0 auto;
-    padding-top: 80px;
+    padding-top: 120px;
+    padding-bottom: 50px;
     column-gap: 55px;
 
     @media screen and (max-width: 1200px) {
@@ -814,7 +1049,7 @@
 
 .firstSlider {
     scroll-behavior: smooth;
-    padding-top: 100px;
+    padding-top: 80px;
     padding-bottom: 92px;
     background-color: white;
 
@@ -1072,6 +1307,7 @@
             width: 100%;
             @media screen and (max-width: 1200px) {
                 padding: 0px 3vw;
+                padding-bottom: 50px;
             }
             @media screen and (max-width: 768px) {
                 display: flex;
@@ -1290,8 +1526,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 182px;
-    padding-top: 210px;
+    padding-top: 392px;
     overflow: hidden;
     @media screen and (max-width: 1200px) {
         padding-top: 180px;
@@ -1410,7 +1645,7 @@
             left: 5vw;
         }
         position: absolute;
-        top: 25px;
+        top: 207px;
         left: 35px;
         @media screen and (max-width: 1200px) {
             transform: scale(0.9);
@@ -1428,8 +1663,8 @@
             right: 5vw;
         }
         position: absolute;
-        top: 20px;
-        right: 22px;
+        top: 202px;
+        right: 38px;
         @media screen and (max-width: 1200px) {
             transform: scale(0.9);
         }
@@ -1443,7 +1678,7 @@
     }
     .scale_gradient_circle {
         position: absolute;
-        top: 0px;
+        top: 182px;
         left: 0px;
         right: 0px;
         z-index: -1;
@@ -1489,193 +1724,202 @@
 }
 
 .getStartedForm {
-    @media screen and (min-width: 1500px) {
-        max-width: 1300px;
-        height: 600px;
-    }
-    max-width: 1118px;
-    min-height: 560px;
-    border-radius: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: space-between;
-    column-gap: 6.5vw;
-    background-color: #ffbd9e;
-    margin: 0 auto;
-    padding: 104px;
-    padding-left: 80px;
-    margin-top: 194px;
+    padding-top: 194px;
     overflow: hidden;
-    @media screen and (max-width: 1200px) {
-        max-width: 90vw;
-        padding: 84px;
-        padding-left: 70px;
-    }
-    @media screen and (max-width: 1050px) {
-        padding: 74px;
-        padding-left: 60px;
-    }
     @media screen and (max-width: 992px) {
-        grid-template-columns: 1fr;
-        row-gap: 55px;
-        padding: 94px;
-        max-width: 85vw;
-        margin-top: 164px;
+        padding-top: 164px;
     }
     @media screen and (max-width: 768px) {
-        max-width: 90vw;
-        margin-top: 134px;
-        padding: 64px 7vw;
+        padding-top: 134px;
     }
     @media screen and (max-width: 576px) {
-        margin-top: 100px;
-        padding: 0px;
-        max-width: 100vw;
-        row-gap: 13px;
+        padding-top: 100px;
     }
-    .getStartedForm_col {
+    .getStartedForm_block {
         @media screen and (min-width: 1500px) {
-            max-width: 100%;
+            max-width: 1300px;
+            height: 600px;
         }
-        align-self: center;
-        max-width: 390px;
+        max-width: 1118px;
+        min-height: 560px;
+        border-radius: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 6.5vw;
+        background-color: #ffbd9e;
+        padding: 104px;
+        padding-left: 80px;
+        margin: 0 auto;
+
+        @media screen and (max-width: 1200px) {
+            max-width: 90vw;
+            padding: 84px;
+            padding-left: 70px;
+        }
+        @media screen and (max-width: 1050px) {
+            padding: 74px;
+            padding-left: 60px;
+        }
         @media screen and (max-width: 992px) {
-            max-width: 100%;
+            grid-template-columns: 1fr;
+            row-gap: 55px;
+            padding: 94px;
+            max-width: 85vw;
+        }
+        @media screen and (max-width: 768px) {
+            max-width: 90vw;
+            padding: 64px 7vw;
         }
         @media screen and (max-width: 576px) {
-            padding: 44px;
+            padding: 0px;
+            max-width: 100vw;
+            row-gap: 13px;
         }
-
-        h2 {
-            @include headerBold40;
-            color: #222433;
-            margin-bottom: 37px;
-            @media screen and (max-width: 992px) {
-                margin-bottom: 32px;
+        .getStartedForm_col {
+            @media screen and (min-width: 1500px) {
+                max-width: 100%;
             }
-            @media screen and (max-width: 768px) {
-                margin-bottom: 26px;
+            max-width: 390px;
+            @media screen and (max-width: 992px) {
+                max-width: 100%;
             }
             @media screen and (max-width: 576px) {
-                margin-bottom: 20px;
-            }
-        }
-        p {
-            @include plainText18;
-            color: #1e1a20;
-        }
-    }
-    .getStartedForm_form {
-        background-color: #f7f3f4;
-        border-radius: 16px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        padding: 40px 55px;
-        height: fit-content;
-        align-self: center;
-        @media screen and (max-width: 1200px) {
-            padding: 35px;
-        }
-        @media screen and (max-width: 576px) {
-            margin: 0px 5vw;
-            margin-bottom: 56px;
-        }
-        h3 {
-            font-family: $fBold;
-            font-size: 32px;
-            color: #222433;
-            line-height: 56px;
-            margin-bottom: 29px;
-        }
-        .getStartedForm_form_input {
-            position: relative;
-            width: 100%;
-            margin-bottom: 15px;
-            border-radius: 40px;
-            transition: all 0.3s ease-in-out;
-        }
-        input {
-            @include mainInput;
-            height: 48px;
-            width: 100%;
-            transition: all 0.3s ease-in-out;
-            border: 1px solid transparent;
-            &:focus-visible {
-                outline: none;
-            }
-            &:focus {
-                outline: none;
-                border: 1px solid #7675fd;
-            }
-            &:active {
-                outline: none;
-                border: 1px solid #7675fd;
-            }
-            &:hover {
-                outline: none;
-                border: 1px solid #7675fd;
-            }
-        }
-        .errorMessage {
-            color: rgb(244, 59, 59);
-            position: absolute;
-            left: 24px;
-            bottom: -20px;
-            font-size: 14px;
-        }
-        button {
-            @include buttonRounded;
-            width: 100%;
-            margin-top: 16px;
-            background-color: #f2726c;
-            text-transform: uppercase;
-            color: white;
-            letter-spacing: 1px;
-            font-size: 13px;
-            &:hover {
-                box-shadow: 0 2px 25px #f2736c70;
+                padding: 44px;
             }
 
-            &:active {
-                background-color: #f2736c70;
-                color: white;
-                box-shadow: 0 2px 25px #f2736c70;
+            h2 {
+                @include headerBold40;
+                color: #222433;
+                margin-bottom: 37px;
+                @media screen and (max-width: 992px) {
+                    margin-bottom: 32px;
+                }
+                @media screen and (max-width: 768px) {
+                    margin-bottom: 26px;
+                }
+                @media screen and (max-width: 576px) {
+                    margin-bottom: 20px;
+                }
             }
-            &:focus-visible {
-                outline: none;
-                outline: 1px solid $cBorder;
-                box-shadow: 0 2px 25px #f2736c70;
+            p {
+                @include plainText18;
+                color: #1e1a20;
             }
         }
-        .getStartedForm_form_leaf {
-            position: absolute;
-            top: -20px;
-            right: -15px;
-            z-index: 21;
-        }
-        .getStartedForm_success {
-            width: inherit;
-            height: inherit;
-            background: linear-gradient(347.34deg, #43a3a8 31.62%, #24236d 74.85%);
-            z-index: 20;
-            position: absolute;
-            border-radius: 8px;
-            top: 0px;
-            bottom: 0px;
-            left: 0px;
-            right: 0px;
+        .getStartedForm_form {
+            background-color: #f7f3f4;
+            border-radius: 16px;
+            position: relative;
             display: flex;
-            justify-content: center;
             align-items: center;
-            flex-direction: row;
-            text-align: center;
-            color: white;
-            font-size: 30px;
-            transition: all 0.3s ease-in-out;
-            @media screen and (max-width: 567px) {
-                font-size: 25px;
+            flex-direction: column;
+            padding: 40px 55px;
+            height: fit-content;
+            align-self: center;
+            @media screen and (max-width: 1200px) {
+                padding: 35px;
+            }
+            @media screen and (max-width: 576px) {
+                margin: 0px 5vw;
+                margin-bottom: 56px;
+            }
+            h3 {
+                font-family: $fBold;
+                font-size: 32px;
+                color: #222433;
+                line-height: 56px;
+                margin-bottom: 29px;
+            }
+            .getStartedForm_form_input {
+                position: relative;
+                width: 100%;
+                margin-bottom: 15px;
+                border-radius: 40px;
+                transition: all 0.3s ease-in-out;
+            }
+            input {
+                @include mainInput;
+                height: 48px;
+                width: 100%;
+                transition: all 0.3s ease-in-out;
+                border: 1px solid transparent;
+                &:focus-visible {
+                    outline: none;
+                }
+                &:focus {
+                    outline: none;
+                    border: 1px solid #7675fd;
+                }
+                &:active {
+                    outline: none;
+                    border: 1px solid #7675fd;
+                }
+                &:hover {
+                    outline: none;
+                    border: 1px solid #7675fd;
+                }
+            }
+            .errorMessage {
+                color: rgb(244, 59, 59);
+                position: absolute;
+                left: 24px;
+                bottom: -20px;
+                font-size: 14px;
+            }
+            button {
+                @include buttonRounded;
+                width: 100%;
+                margin-top: 16px;
+                background-color: #f2726c;
+                text-transform: uppercase;
+                color: white;
+                letter-spacing: 1px;
+                font-size: 13px;
+                &:hover {
+                    box-shadow: 0 2px 25px #f2736c70;
+                }
+
+                &:active {
+                    background-color: #f2736c70;
+                    color: white;
+                    box-shadow: 0 2px 25px #f2736c70;
+                }
+                &:focus-visible {
+                    outline: none;
+                    outline: 1px solid $cBorder;
+                    box-shadow: 0 2px 25px #f2736c70;
+                }
+            }
+            .getStartedForm_form_leaf {
+                position: absolute;
+                top: -20px;
+                right: -15px;
+                z-index: 21;
+            }
+            .getStartedForm_success {
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(347.34deg, #43a3a8 31.62%, #24236d 74.85%);
+                z-index: 20;
+                position: absolute;
+                border-radius: 8px;
+                top: 0px;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                text-align: center;
+                color: white;
+                font-size: 30px;
+                transition: all 0.3s ease-in-out;
+                @media screen and (max-width: 567px) {
+                    font-size: 25px;
+                }
             }
         }
     }
@@ -1692,7 +1936,7 @@
     column-gap: 3vw;
     margin: 0 auto;
     margin-top: 190px;
-    margin-bottom: 192px;
+    margin-bottom: 50px;
 
     @media (max-width: 1250px) {
         max-width: 90vw;
@@ -2258,7 +2502,7 @@
     justify-content: space-between;
     padding-left: 8.5vw;
     padding-right: 10vw;
-    padding-top: 105px;
+    padding-top: 35px;
     padding-bottom: 80px;
     column-gap: 12vw;
     overflow: hidden;

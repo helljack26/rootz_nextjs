@@ -33,8 +33,16 @@ export const GetStartedForm = () => {
 	};
 
 	return (
-		<>
-			<div className={style.getStartedForm} data-scroll-section>
+		<div className={style.getStartedForm}
+			data-scroll-section
+		>
+			<div className={style.getStartedForm_block}
+				data-scroll
+				data-scroll-speed={0.5}
+				data-scroll-position="top"
+				data-scroll-direction="vertical"
+			>
+
 				<div className={style.getStartedForm_col}>
 					<h2 >Get Started Today!</h2>
 					<p >
@@ -83,7 +91,7 @@ export const GetStartedForm = () => {
 							opacity: isSuccessDisplay === true ? 1 : 0,
 							display: isSuccess === true ? 'flex' : 'none',
 						}}
-					>All is ok!</div>
+					>Let's start!</div>
 
 					<div className={style.getStartedForm_form_leaf}>
 						<Image src={I.formLeafs} priority />
@@ -91,7 +99,8 @@ export const GetStartedForm = () => {
 
 				</form>
 			</div>
-		</>
+
+		</div>
 	)
 }
 

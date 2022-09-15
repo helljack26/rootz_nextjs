@@ -8,6 +8,7 @@ import style from '../styles/main.module.scss'
 // Components
 import { Navbar } from '../components/navbar';
 import { SideMenu } from '../components/sideMenu';
+import { LeafsFalling } from '../components/leafsFalling';
 import { NatureNeedsYou } from '../components/Intro/natureNeedsYou';
 import { MembersAndParrot } from '../components/Intro/membersAndParrot';
 import { Blog } from '../components/blog';
@@ -21,6 +22,7 @@ import { Footer } from '../components/footer';
 
 export default function Home() {
     const [isSideMenuOpen, openSideMenu] = useState(false);
+    const [isShowLeafFalling, showLeafFalling] = useState(false);
 
     let tl = gsap.timeline({ delay: 0.3 });
     useEffect(() => {
@@ -32,18 +34,29 @@ export default function Home() {
             delay: 0.4,
         });
     });
+    useEffect(() => {
+        if (typeof window === 'undefined') return
+    }, []);
     return (
         <>
             <Head>
                 <title>Rootz</title>
                 <link rel="icon" href="/favicon.svg" />
                 <meta charSet="utf-8" />
+
             </Head>
 
             <SmoothScrollProvider>
+                <style global jsx>{`
+                    @font-face { font-family: "Poppins-Regular"; src: url("/static/fonts/Poppins-Regular/Poppins-Regular.eot"); src: local("☺"), url("/static/fonts/Poppins-Regular/Poppins-Regular.woff") format("woff"), url("/static/fonts/Poppins-Regular/Poppins-Regular.ttf") format("truetype"), url("/static/fonts/Poppins-Regular/Poppins-Regular.svg") format("svg"); font-weight: normal; font-style: normal;  }
+                    @font-face { font-family: "Poppins-Bold"; src: url("/static/fonts/Poppins-Bold/Poppins-Bold.eot"); src: local("☺"), url("/static/fonts/Poppins-Bold/Poppins-Bold.woff") format("woff"), url("/static/fonts/Poppins-Bold/Poppins-Bold.ttf") format("truetype"), url("/static/fonts/Poppins-Bold/Poppins-Bold.svg") format("svg"); font-weight: normal; font-style: normal; }
+                 `}</style>
+                <LeafsFalling isShowLeafFalling={isShowLeafFalling} />
 
-                <Navbar isSideMenuOpen={isSideMenuOpen} openSideMenu={openSideMenu} />
+                <Navbar isSideMenuOpen={isSideMenuOpen} openSideMenu={openSideMenu} showLeafFalling={showLeafFalling} />
                 <SideMenu isSideMenuOpen={isSideMenuOpen} openSideMenu={openSideMenu} />
+
+
                 <div id='home' className={style.intro} data-scroll-section>
                     <NatureNeedsYou />
                     <MembersAndParrot />

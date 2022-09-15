@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useState, useRef } from 'react'
 import Image from 'next/image'
 
 import I from '../img/images'
@@ -58,28 +58,15 @@ export const FirstSlider = () => {
 	const isLastSlide = sliderData && currentPosition === sliderData.length
 	const isOnlyOneSlide = sliderData && sliderData.length > 1
 
-	// const articleData = async () => {
-	// }
-
 	if (sliderData.length === 0) {
 		setState(firstSliderData)
-		// const blog = await api.blog.getBlog();
-		// if (blog) {
-		// 	setState(withoutCurrent)
-		// }
 	}
-
-	// if (sliderData) {
-	// 	if (sliderData.length === 0) {
-	// 		return <></>
-	// 	}
-	// }
 
 	return (
 		<>
 			<section id='places' className={style.firstSlider} data-scroll-section>
 
-				<div className={style.firstSlider_block}>
+				<div className={style.firstSlider_block} >
 					{isOnlyOneSlide &&
 						<>
 							<button
@@ -95,14 +82,20 @@ export const FirstSlider = () => {
 						</>
 					}
 					<Slider
+						data-scroll
+						data-scroll-speed="0.2"
+						data-scroll-delay="2"
+						data-scroll-position="top"
+						data-scroll-direction="vertical"
 						ref={sliderRef}
 						{...settings}>
 						{sliderData &&
 							sliderData.map((c, id) => {
 								return (
-									<div key={id} >
+									<div key={id}>
 										<div className={style.firstSlider_item} style={{ backgroundColor: `${c.sliderBgColor}` }} >
-											<div className={style.firstSlider_item_col}>
+											<div className={style.firstSlider_item_col}
+											>
 												<h2 className={style.firstSlider_item_col_title}>
 													{c.slideTitle}
 												</h2>
@@ -111,7 +104,14 @@ export const FirstSlider = () => {
 												</p>
 											</div>
 											<div className={style.firstSlider_item_img_block}>
-												<Image src={I.firstSliderRectangle} className={style.firstSlider_item_img} priority />
+												<Image src={I.firstSliderRectangle} className={style.firstSlider_item_img}
+													data-scroll
+													data-scroll-delay={1}
+													data-scroll-speed='-1'
+													data-scroll-position="top"
+													data-scroll-direction="vertical"
+													priority
+												/>
 											</div>
 										</div>
 									</div>

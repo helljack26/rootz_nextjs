@@ -4,7 +4,6 @@ import React, { createContext, useEffect, useRef, useState } from "react";
 import GlobalState from './GlobalState'
 import { runInAction } from 'mobx'
 
-gsap.registerPlugin(ScrollTrigger);
 
 export const SmoothScrollContext = createContext({
    scroll: null
@@ -13,6 +12,7 @@ export const SmoothScrollContext = createContext({
 export const SmoothScrollProvider = ({ children }) => {
    const [scroll, setScroll] = useState(null);
    const scrollWrapper = useRef(null);
+   gsap.registerPlugin(ScrollTrigger);
 
    useEffect(() => {
       if (!scroll) {
@@ -62,7 +62,6 @@ export const SmoothScrollProvider = ({ children }) => {
                const animationTl = gsap.timeline();
                ScrollTrigger.create({
                   scroller: "#smooth-scroll",
-                  // trigger: ".gsap-container",
                   animation: animationTl,
                   scrub: true
                });

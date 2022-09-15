@@ -2,11 +2,8 @@ import { useState, useEffect } from 'react'
 
 import AnimateHeight from 'react-animate-height';
 
-import Image from 'next/image'
-
-import I from '../img/images'
-
 import style from '../styles/main.module.scss'
+
 const accordionData = [
 	{
 		accordionTitle: 'What can I do to protect our planet?',
@@ -49,7 +46,12 @@ const AccordionItem = ({ item, isShowDescription, setActiveIndex, index }) => {
 					{item.accordionTitle}
 				</span>
 
-				<span className={style.accordion_item_button}>
+				<span className={style.accordion_item_button}
+					data-scroll
+					data-scroll-delay={1}
+					data-scroll-position="top"
+					data-scroll-direction="vertical"
+				>
 					<span className={` ${!isRotatePlus && style.rotate180}`}></span>
 					<span className={`${!isRotatePlus && style.rotate0} ${isRotatePlus && style.rotate90}`}></span>
 				</span>
@@ -69,8 +71,13 @@ export const ReadyAccordion = () => {
 	const [activeIndex, setActiveIndex] = useState(0);
 
 	return (
-		<>
-			<div className={style.readyAccordion} data-scroll-section>
+		<div data-scroll-section>
+			<div className={style.readyAccordion}
+				data-scroll
+				data-scroll-speed={0.5}
+				data-scroll-position="top"
+				data-scroll-direction="vertical"
+			>
 				<div className={style.readyAccordion_col}>
 					<h2 >
 						Ready To Get Started?
@@ -99,7 +106,7 @@ export const ReadyAccordion = () => {
 					})}
 				</div>
 			</div>
-		</>
+		</div>
 	)
 }
 
