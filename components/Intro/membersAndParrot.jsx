@@ -38,14 +38,6 @@ export const MembersAndParrot = () => {
             ) return
 
             if (!isMobile) {
-                // gsap.fromTo(membersAndParrot_container.current, {
-                //     opacity: 0,
-                // }, {
-                //     duration: 2,
-                //     delay: 1,
-                //     opacity: 1,
-                //     ease: Power3.easeInOut
-                // })
                 gsap.from(membersAndParrot_leafs1.current, {
                     opacity: 0,
                     duration: 3,

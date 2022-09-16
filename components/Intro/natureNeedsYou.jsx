@@ -36,16 +36,6 @@ export const NatureNeedsYou = () => {
             y: 0,
             ease: Power3.easeInOut
         })
-        gsap.fromTo(natureNeedsYou_img.current, {
-            y: 20,
-            opacity: 0,
-        }, {
-            duration: 4,
-            delay: 0.6,
-            opacity: 1,
-            y: 0,
-            ease: Power3.easeInOut
-        })
         gsap.fromTo(natureNeedsYou_text.current, {
             y: 20,
             opacity: 0,

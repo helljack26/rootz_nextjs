@@ -23,12 +23,15 @@ import { Footer } from '../components/footer';
 export default function Home() {
     let tl = gsap.timeline({ delay: 0.3 });
     useEffect(() => {
-        tl.from('.header_block', {
-            duration: 1,
-            y: -10,
+        tl.fromTo('.header_block', {
             opacity: 0,
-            ease: Power3.easeIn,
-            delay: 0.4,
+            y: -15,
+        }, {
+            duration: 2,
+            y: 0,
+            opacity: 1,
+            ease: Power3.easeInOut,
+            delay: 0.6,
         });
     });
     useEffect(() => {
