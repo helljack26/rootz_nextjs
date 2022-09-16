@@ -21,7 +21,7 @@ export const NatureNeedsYou = () => {
         gsap.fromTo(natureNeedsYou_container.current, {
             opacity: 0,
         }, {
-            duration: 2,
+            duration: 4,
             delay: 0.6,
             opacity: 1,
             ease: Power3.easeInOut
@@ -30,7 +30,7 @@ export const NatureNeedsYou = () => {
             y: 20,
             opacity: 0,
         }, {
-            duration: 2,
+            duration: 4,
             delay: 0.6,
             opacity: 1,
             y: 0,
@@ -40,7 +40,7 @@ export const NatureNeedsYou = () => {
             y: 20,
             opacity: 0,
         }, {
-            duration: 2,
+            duration: 4,
             delay: 0.6,
             opacity: 1,
             y: 0,
@@ -50,7 +50,7 @@ export const NatureNeedsYou = () => {
             y: 20,
             opacity: 0,
         }, {
-            duration: 2,
+            duration: 4,
             delay: 0.6,
             opacity: 1,
             y: 0,
@@ -60,8 +60,7 @@ export const NatureNeedsYou = () => {
             y: 10,
             opacity: 0,
         }, {
-            duration: 2,
-            // duration: 0.toFixed.,
+            duration: 3,
             opacity: 1,
             y: 0,
             ease: Power3.easeInOut
