@@ -38,18 +38,18 @@ export const MembersAndParrot = () => {
             ) return
 
             if (!isMobile) {
-                gsap.fromTo(membersAndParrot_container.current, {
-                    opacity: 0,
-                }, {
-                    duration: 2,
-                    delay: 1,
-                    opacity: 1,
-                    ease: Power3.easeInOut
-                })
+                // gsap.fromTo(membersAndParrot_container.current, {
+                //     opacity: 0,
+                // }, {
+                //     duration: 2,
+                //     delay: 1,
+                //     opacity: 1,
+                //     ease: Power3.easeInOut
+                // })
                 gsap.from(membersAndParrot_leafs1.current, {
                     opacity: 0,
                     duration: 3,
-                    delay: 2,
+                    delay: 1,
                     rotate: 90,
                     y: 70,
                     x: -70,
@@ -58,7 +58,7 @@ export const MembersAndParrot = () => {
                 gsap.from(membersAndParrot_leafs2.current, {
                     opacity: 0,
                     duration: 3.5,
-                    delay: 2,
+                    delay: 1,
                     rotate: 90,
                     y: 20,
                     x: -70,
@@ -67,7 +67,7 @@ export const MembersAndParrot = () => {
                 gsap.from(membersAndParrot_leafs3.current, {
                     opacity: 0,
                     duration: 3.2,
-                    delay: 2,
+                    delay: 1,
                     rotate: 120,
                     y: 20,
                     x: -70,
@@ -76,7 +76,7 @@ export const MembersAndParrot = () => {
                 gsap.from(membersAndParrot_leafs4.current, {
                     opacity: 0,
                     duration: 3.7,
-                    delay: 2,
+                    delay: 1,
                     rotate: 90,
                     y: -20,
                     x: -70,
@@ -85,26 +85,34 @@ export const MembersAndParrot = () => {
                 gsap.from(membersAndParrot_leafs5.current, {
                     opacity: 0,
                     duration: 3,
-                    delay: 2,
+                    delay: 1,
                     rotate: 90,
                     y: -50,
                     x: -70,
                     ease: Power3.easeInOut
                 })
-                gsap.from(`.${style.members_container}`, {
-                    duration: 2.5,
-                    y: 20,
-                    x: -40,
-                    delay: 1,
+                gsap.fromTo(members_container.current, {
                     opacity: 0,
+                    y: 40,
+                    x: -60,
+                }, {
+                    duration: 4,
+                    delay: 0.6,
+                    y: 0,
+                    x: 0,
+                    opacity: 1,
                     ease: Power3.easeInOut
                 })
-                gsap.from(parrot_block.current, {
-                    duration: 2.5,
-                    yPercent: 10,
-                    xPercent: -10,
-                    delay: 1,
+                gsap.fromTo(parrot_block.current, {
                     opacity: 0,
+                    y: 40,
+                    x: -60,
+                }, {
+                    duration: 4,
+                    y: 0,
+                    delay: 0.6,
+                    x: 0,
+                    opacity: 1,
                     ease: Power3.easeInOut
                 })
             }

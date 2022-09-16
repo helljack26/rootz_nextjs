@@ -57,11 +57,11 @@ export const NatureNeedsYou = () => {
             ease: Power3.easeInOut
         })
         gsap.fromTo(search_container.current, {
-            y: 20,
+            y: 10,
             opacity: 0,
         }, {
             duration: 2,
-            delay: 0.6,
+            // duration: 0.toFixed.,
             opacity: 1,
             y: 0,
             ease: Power3.easeInOut
