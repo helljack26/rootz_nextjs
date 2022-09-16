@@ -55,6 +55,20 @@ export const NatureNeedsYou = () => {
             y: 0,
             ease: Power3.easeInOut
         })
+        gsap.fromTo(`${style.search_input}`, {
+            opacity: 0,
+        }, {
+            duration: 3,
+            opacity: 1,
+            ease: Power3.easeInOut
+        })
+        gsap.fromTo(`${style.search_button}`, {
+            opacity: 0,
+        }, {
+            duration: 3,
+            opacity: 1,
+            ease: Power3.easeInOut
+        })
     });
 
     return (

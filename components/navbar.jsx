@@ -67,8 +67,7 @@ export const Navbar = observer(({ isSideMenuOpen }) => {
                     }
                 </nav>
 
-                <button type='button' className={style.header_button}
-
+                <button type='button' className={`${style.header_button} header_button`}
                     onClick={() => { scroll.scrollTo('#getStartedForm') }}
                     style={{ transform: scrollY > 10 ? 'scale(0.75)' : 'scale(1)' }}
                 >

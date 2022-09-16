@@ -32,7 +32,15 @@ export default function Home() {
             opacity: 1,
             ease: Power3.easeInOut,
             delay: 0.6,
-        });
+        })
+            .fromTo('.header_button', {
+                opacity: 0,
+            }, {
+                duration: 2,
+                opacity: 1,
+                ease: Power3.easeInOut,
+                delay: 0.6,
+            });
     });
     useEffect(() => {
         if (typeof window === 'undefined') return
