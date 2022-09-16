@@ -73,7 +73,7 @@ export const SecondSlider = () => {
     <div data-scroll-section>
       <section className={style.secondSlider}
         data-scroll
-        data-scroll-delay={0.5}
+        data-scroll-delay={1}
         data-scroll-speed={0.2}
         data-scroll-position="top"
         data-scroll-direction="vertical"

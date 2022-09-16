@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { useRef } from "react";
 
 import style from '../styles/main.module.scss';
@@ -11,15 +10,13 @@ export const Footer = observer(() => {
     const footerRef = useRef(null)
 
     return (
-
         <footer
             className={style.footer}
             ref={footerRef}
             data-scroll-section
         >
 
-            <div className={style.footer_col}
-            >
+            <div className={style.footer_col} >
                 <h4>Contacts</h4>
 
                 <div className={style.footer_col_text_row}>
@@ -32,9 +29,7 @@ export const Footer = observer(() => {
                 </div>
             </div>
 
-            <div className={style.footer_col_row}
-
-            >
+            <div className={style.footer_col_row}>
 
                 <div className={style.footer_col}>
                     <span className={style.footer_col_title}>Headquarters</span>
@@ -54,21 +49,15 @@ export const Footer = observer(() => {
                     <span className={style.footer_col_title}>Social media</span>
 
                     <div className={style.footer_col_links}>
-                        <Link href={'/'}>
-                            <a className={style.footer_info_link}>
-                                <Image src={I.twitterIcon} />
-                            </a>
-                        </Link>
-                        <Link href={'/'}>
-                            <a className={style.footer_info_link}>
-                                <Image src={I.facebookIcon} />
-                            </a>
-                        </Link>
-                        <Link href={'/'}>
-                            <a className={style.footer_info_link}>
-                                <Image src={I.linkedInIcon} />
-                            </a>
-                        </Link>
+                        <button type='button' className={style.footer_info_link}>
+                            <Image src={I.twitterIcon} />
+                        </button>
+                        <button type='button' className={style.footer_info_link}>
+                            <Image src={I.facebookIcon} />
+                        </button>
+                        <button type='button' className={style.footer_info_link}>
+                            <Image src={I.linkedInIcon} />
+                        </button>
                     </div>
                 </div>
             </div>

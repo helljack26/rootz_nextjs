@@ -1932,7 +1932,7 @@
     column-gap: 3vw;
     margin: 0 auto;
     margin-top: 190px;
-    margin-bottom: 50px;
+    margin-bottom: 190px;
 
     @media (max-width: 1250px) {
         max-width: 90vw;
@@ -2134,6 +2134,7 @@
     padding: 104px 0px;
     padding-bottom: 95px;
     overflow: hidden;
+    margin-bottom: 50px;
 
     @media screen and (max-width: 992px) {
         padding: 90px 0px;
