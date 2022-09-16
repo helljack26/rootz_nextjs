@@ -78,8 +78,6 @@ export default function Home() {
 
             </SmoothScrollProvider>
 
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js" ></script>
-            <script src="https://polyfill.io/v3/polyfill.min.js?features=Object.assign%2CElement.prototype.append%2CNodeList.prototype.forEach%2CCustomEvent%2Csmoothscroll"></script>
         </>
     )
 }
