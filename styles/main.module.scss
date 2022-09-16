@@ -298,7 +298,9 @@
     width: 100%;
     text-align: right;
     z-index: 1200;
-
+    @media (max-width: 500px) {
+        top: -100px;
+    }
     i {
         display: inline-block;
         width: 200px;
@@ -482,7 +484,7 @@
     }
 
     100% {
-        transform: translate3d(-350px, 700px, 0) rotate(90deg);
+        transform: translate3d(-300px, 750px, 0) rotate(90deg);
         opacity: 0;
     }
 }
@@ -493,7 +495,7 @@
     }
 
     100% {
-        transform: translate3d(-230px, 640px, 0) rotate(-70deg);
+        transform: translate3d(-200px, 690px, 0) rotate(-70deg);
         opacity: 0;
     }
 }
@@ -504,7 +506,7 @@
     }
 
     100% {
-        -webkit-transform: translate3d(-400px, 680px, 0) rotate(0deg);
+        -webkit-transform: translate3d(-350px, 730px, 0) rotate(0deg);
         opacity: 0;
     }
 }
