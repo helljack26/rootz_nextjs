@@ -12,6 +12,12 @@ body {
     margin-right: 16px;
 }
 
+@media (max-width: 500px) {
+    .no_scroll {
+        margin-right: 0px;
+    }
+}
+
 html {
     scroll-behavior: smooth;
 }
