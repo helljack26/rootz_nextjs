@@ -67,7 +67,7 @@ export const NatureNeedsYou = () => {
             ref={natureNeedsYou_container}
         >
             <div className={style.natureNeedsYou_img} ref={natureNeedsYou_img} >
-                <Image src={I.natureNeedsYou} alt="Nature needs you calligraphy" priority />
+                <Image src={I.natureNeedsYou} alt="Nature needs you calligraphy" />
             </div>
 
             <p className={style.natureNeedsYou_text} ref={natureNeedsYou_text}>
@@ -79,7 +79,7 @@ export const NatureNeedsYou = () => {
                 ref={search_container}
             >
                 <span className={style.search_icon}>
-                    <Image src={I.locationIcon} width={18} height={22} priority />
+                    <Image src={I.locationIcon} width={18} height={22} />
                 </span>
 
                 <input

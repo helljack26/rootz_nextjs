@@ -49,7 +49,6 @@ export const Navbar = observer(({ isSideMenuOpen }) => {
                         className={style.logo}
                         src={I.logo}
                         alt="Site logo"
-                        priority
                     />
                 </button>
 
