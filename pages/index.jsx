@@ -21,9 +21,8 @@ import { SecondSlider } from '../components/secondSlider';
 import { Footer } from '../components/footer';
 
 export default function Home() {
-    let tl = gsap.timeline({ delay: 0.3 });
     useEffect(() => {
-        tl.fromTo('.header_block', {
+        gsap.fromTo('.header_block', {
             opacity: 0,
             y: -15,
         }, {
@@ -33,14 +32,14 @@ export default function Home() {
             ease: Power3.easeInOut,
             delay: 0.6,
         })
-            .fromTo('.header_button', {
-                opacity: 0,
-            }, {
-                duration: 2,
-                opacity: 1,
-                ease: Power3.easeInOut,
-                delay: 0.6,
-            });
+        gsap.fromTo('.header_button', {
+            opacity: 0,
+        }, {
+            duration: 2,
+            opacity: 1,
+            ease: Power3.easeInOut,
+            delay: 0.6,
+        });
     });
     useEffect(() => {
         if (typeof window === 'undefined') return

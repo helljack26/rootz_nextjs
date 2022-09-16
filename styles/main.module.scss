@@ -34,6 +34,7 @@
         align-items: center;
         flex-direction: row;
         height: 100%;
+        opacity: 0;
         border-bottom: 4px solid $cBorder;
         .logoButton {
             transition: all 0.5s ease-in-out;
@@ -97,6 +98,7 @@
             color: black;
             background-color: $cWhite;
             width: 145px;
+            opacity: 0;
             transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out, background-color 0.1s ease-in-out;
             @media screen and (max-width: 768px) {
                 display: none;
@@ -655,6 +657,7 @@
                 width: 100%;
                 padding-left: 48px;
                 padding-right: 143px;
+                opacity: 0;
                 @media screen and (max-width: 450px) {
                     padding-right: 103px;
                 }
@@ -670,6 +673,7 @@
                 width: 137px;
                 height: 100%;
                 position: absolute;
+                opacity: 0;
                 top: 0px;
                 bottom: 0px;
                 right: 0px;

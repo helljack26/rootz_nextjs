@@ -10,13 +10,17 @@ export const NatureNeedsYou = () => {
     const natureNeedsYou_img = useRef(null)
     const natureNeedsYou_text = useRef(null)
     const search_container = useRef(null)
+    const search_input = useRef(null)
+    const search_button = useRef(null)
 
     useEffect(() => {
         if (
             !natureNeedsYou_container.current ||
             !natureNeedsYou_img.current ||
             !natureNeedsYou_text.current ||
-            !search_container.current
+            !search_container.current ||
+            !search_input.current ||
+            !search_button.current
         ) return
         gsap.fromTo(natureNeedsYou_container.current, {
             opacity: 0,
@@ -55,14 +59,14 @@ export const NatureNeedsYou = () => {
             y: 0,
             ease: Power3.easeInOut
         })
-        gsap.fromTo(`${style.search_input}`, {
+        gsap.fromTo(search_input.current, {
             opacity: 0,
         }, {
             duration: 3,
             opacity: 1,
             ease: Power3.easeInOut
         })
-        gsap.fromTo(`${style.search_button}`, {
+        gsap.fromTo(search_button.current, {
             opacity: 0,
         }, {
             duration: 3,
@@ -100,9 +104,13 @@ export const NatureNeedsYou = () => {
                     type="text"
                     placeholder='Find the place to help'
                     className={style.search_input}
+                    ref={search_input}
+
                 />
 
-                <button type='button' className={style.search_button}>
+                <button type='button' className={style.search_button}
+                    ref={search_button}
+                >
                     Search
                 </button>
             </div>
