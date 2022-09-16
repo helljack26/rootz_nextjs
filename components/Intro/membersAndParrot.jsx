@@ -42,7 +42,7 @@ export const MembersAndParrot = () => {
                     opacity: 0,
                 }, {
                     duration: 2,
-                    delay: 0.6,
+                    delay: 1,
                     opacity: 1,
                     ease: Power3.easeInOut
                 })
@@ -178,7 +178,6 @@ export const MembersAndParrot = () => {
 
 
             <div className={style.members_container}
-
                 ref={members_container}
                 data-scroll
                 data-scroll-speed="-1"

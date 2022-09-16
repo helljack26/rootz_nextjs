@@ -74,7 +74,8 @@ export const ReadyAccordion = () => {
 		<div data-scroll-section>
 			<div className={style.readyAccordion}
 				data-scroll
-				data-scroll-speed={0.5}
+				data-scroll-speed={0.2}
+				data-scroll-delay={1}
 				data-scroll-position="top"
 				data-scroll-direction="vertical"
 			>

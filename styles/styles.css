@@ -23,12 +23,14 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-track {
     background: #F7F3F4;
     background: #F7F3F4;
-    /* border-radius: 4px; */
 }
 
 body::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: transparent;
+    width: 16px;
+    border-radius: 10px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f2726c), to(#7675FD));
+    background: linear-gradient(180deg, #f2726c, #7675FD);
 }
 
 * {
@@ -137,6 +139,7 @@ html.has-scroll-dragging {
     bottom: 0;
     transform: scaleY(1);
     background-color: white;
+    z-index: 900;
 }
 
 [data-scroll-direction="horizontal"] .c-scrollbar:hover {
