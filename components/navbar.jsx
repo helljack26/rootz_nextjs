@@ -11,7 +11,7 @@ import GlobalState from '../stores/GlobalState'
 import { observer } from 'mobx-react'
 import { runInAction } from 'mobx';
 
-export const Navbar = observer(({ isSideMenuOpen, openSideMenu }) => {
+export const Navbar = observer(({ isSideMenuOpen }) => {
     const scrollY = GlobalState.locoScroll;
     const scroll = GlobalState.scroll;
     const { onTop } = isOnTop(scrollY);
@@ -24,9 +24,14 @@ export const Navbar = observer(({ isSideMenuOpen, openSideMenu }) => {
         }
     }, []);
 
-    const showLeafFalling = (bool) => {
+    const showLeafFalling = () => {
         runInAction(() => {
-            GlobalState.isShowLeafFalling = bool;
+            GlobalState.isShowLeafFalling = !GlobalState.isShowLeafFalling;
+        })
+    }
+    const showSideMenu = () => {
+        runInAction(() => {
+            GlobalState.isSideMenuOpen = !GlobalState.isSideMenuOpen;
         })
     }
 
@@ -38,8 +43,7 @@ export const Navbar = observer(({ isSideMenuOpen, openSideMenu }) => {
                 <button
                     className={style.logoButton}
                     type='button'
-                    onMouseEnter={() => showLeafFalling(true)}
-                    onClick={() => showLeafFalling(false)}
+                    onMouseEnter={() => showLeafFalling()}
                 >
                     <Image
                         className={style.logo}
@@ -54,7 +58,6 @@ export const Navbar = observer(({ isSideMenuOpen, openSideMenu }) => {
                         menuData.map((link, id) => {
                             const { linkHash, linkName } = link;
                             let hash = document.querySelector(`${linkHash}`)
-
                             return (
                                 <a key={id} onClick={() => { scroll.scrollTo(hash) }}
                                     className={activeLink === id ? style.navlink_active : ''}>
@@ -66,13 +69,15 @@ export const Navbar = observer(({ isSideMenuOpen, openSideMenu }) => {
                 </nav>
 
                 <button type='button' className={style.header_button}
+
+                    onClick={() => { scroll.scrollTo('#getStartedForm') }}
                     style={{ transform: scrollY > 10 ? 'scale(0.75)' : 'scale(1)' }}
                 >
                     Apply
                 </button>
 
                 <button
-                    onClick={() => { openSideMenu(!isSideMenuOpen) }}
+                    onClick={() => { showSideMenu() }}
                     type='button' className={style.header_burgerBtn}>
                     <span className={isSideMenuOpen ? style.burgerBtn_open : null}></span>
                     <span className={isSideMenuOpen ? style.burgerBtn_open : null}></span>

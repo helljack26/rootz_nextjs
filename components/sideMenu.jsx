@@ -1,62 +1,84 @@
 import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link'
 import { isOnTop } from './helpers/isOnTop';
 import { detectActiveLink } from './helpers/detectActiveLink';
 
 import style from '../styles/main.module.scss';
 
 import { menuData } from '../res/menuLinks';
+import { observer } from 'mobx-react'
+import GlobalState from '../stores/GlobalState'
+import { runInAction } from 'mobx';
 
-export const SideMenu = ({ isSideMenuOpen, openSideMenu }) => {
+export const SideMenu = observer(() => {
   const sideMenuRef = useRef(null);
-  const { onTop, y } = isOnTop()
-  const activeLink = detectActiveLink({ y: y })
+
+  const scrollY = GlobalState.locoScroll;
+  const scroll = GlobalState.scroll;
+  const { onTop } = isOnTop(scrollY);
+  const activeLink = detectActiveLink({ y: scrollY });
 
   const [isAnimateBackground, setAnimateBackground] = useState(false);
 
+  const isOpen = GlobalState.isSideMenuOpen
+  const [isShowMenu, setShowMenu] = useState(false);
   useEffect(() => {
-    if (isSideMenuOpen) {
+    if (typeof window !== 'undefined') {
+      setShowMenu(true)
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isOpen) {
       document.body.classList.add("no_scroll")
       setTimeout(() => { setAnimateBackground(true) }, 400);
     } else {
       document.body.classList.remove("no_scroll")
       setAnimateBackground(false)
     }
-  }, [isSideMenuOpen]);
+  }, [isOpen]);
+
+  const showSideMenu = (bool) => {
+    runInAction(() => {
+      GlobalState.isSideMenuOpen = bool;
+    })
+  }
+
+  const navigateTo = (hash) => {
+    document.body.classList.remove("no_scroll")
+    showSideMenu(false)
+    scroll.scrollTo(hash)
+  }
 
   return (
     <>
       <div className={`${style.sideMenu_bg} ${isAnimateBackground ? style.sideMenu_Bg_Open : null} `}
-        onClick={() => { openSideMenu(false) }} data-scroll-section></div>
-      <div className={`${style.sideMenu} ${isSideMenuOpen ? style.sideMenuOpen : null} ${onTop ? style.sideMenuDefault : style.sideMenuExpand}`}>
+        onClick={() => { showSideMenu(false) }} data-scroll-section></div>
+      <div className={`${style.sideMenu} ${isOpen ? style.sideMenuOpen : null} ${onTop ? style.sideMenuDefault : style.sideMenuExpand}`}>
 
         <nav className={style.sideMenu_nav} ref={sideMenuRef}>
+          {isShowMenu &&
+            menuData.map((link, id) => {
+              const { linkHash, linkName } = link;
+              let hash = document.querySelector(`${linkHash}`)
 
-          {menuData.map((link, id) => {
-            const { linkHash, linkName } = link;
-            return (
-              <Link
-                href={linkHash}
-                scroll={true}
-                key={id}>
+              return (
                 <a
-                  onClick={() => {
-                    document.body.classList.remove("no_scroll")
-                    openSideMenu(false)
-                  }}
+                  key={id}
+                  onClick={() => { navigateTo(hash) }}
                   className={activeLink === id ? style.sideMenu_navlink_active : null}
                 >{linkName}
                 </a>
-              </Link>
-            )
-          })}
+              )
+            })}
         </nav>
 
-        <button type='button' className={style.sideMenu_header_button}>
+        <button
+          onClick={() => { navigateTo('#getStartedForm') }}
+          type='button' className={style.sideMenu_header_button}>
           Apply
         </button>
       </div >
     </>
 
   );
-};
+})

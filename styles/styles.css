@@ -9,6 +9,7 @@ body {
 
 .no_scroll {
     overflow: hidden;
+    margin-right: 16px;
 }
 
 html {

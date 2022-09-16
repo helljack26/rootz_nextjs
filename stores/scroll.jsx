@@ -4,7 +4,6 @@ import React, { createContext, useEffect, useRef, useState } from "react";
 import GlobalState from './GlobalState'
 import { runInAction } from 'mobx'
 
-
 export const SmoothScrollContext = createContext({
    scroll: null
 });
@@ -23,7 +22,19 @@ export const SmoothScrollProvider = ({ children }) => {
                const locoScroll = new LocomotiveScroll({
                   el: scrollWrapper.current,
                   smooth: true,
-                  lerp: 0.1
+                  lerp: 0.1,
+                  reloadOnContextChange: true,
+
+                  desktop: {
+                     smooth: true
+                  },
+                  smartphone: {
+                     smooth: false
+                  },
+                  tablet: {
+                     smooth: false,
+                     breakpoint: 1100
+                  }
                });
 
                setScroll(locoScroll)
@@ -72,10 +83,9 @@ export const SmoothScrollProvider = ({ children }) => {
       }
 
       return () => {
-         // tslint:disable-next-line:no-unused-expression
          scroll && scroll.destroy();
       };
-   }, [scroll]); // eslint-disable-line react-hooks/exhaustive-deps
+   }, [scroll]);
 
    return (
       <SmoothScrollContext.Provider value={{ scroll }}>

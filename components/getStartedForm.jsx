@@ -7,7 +7,7 @@ import I from '../img/images'
 import style from '../styles/main.module.scss'
 
 export const GetStartedForm = () => {
-	const { register, handleSubmit, setValue, control, reset, formState: { errors }, } = useForm();
+	const { register, handleSubmit, setValue, reset, formState: { errors }, } = useForm();
 	const [isSuccessDisplay, setSuccessDisplay] = useState(false);
 	const [isSuccess, setSuccess] = useState(false);
 
@@ -33,12 +33,15 @@ export const GetStartedForm = () => {
 	};
 
 	return (
-		<div className={style.getStartedForm}
+		<div
+			id='getStartedForm'
+			className={style.getStartedForm}
 			data-scroll-section
 		>
 			<div className={style.getStartedForm_block}
 				data-scroll
-				data-scroll-speed={0.5}
+				data-scroll-speed={0.2}
+				data-scroll-delay={1}
 				data-scroll-position="top"
 				data-scroll-direction="vertical"
 			>
@@ -91,7 +94,7 @@ export const GetStartedForm = () => {
 							opacity: isSuccessDisplay === true ? 1 : 0,
 							display: isSuccess === true ? 'flex' : 'none',
 						}}
-					>Let's start!</div>
+					>Let's begin!</div>
 
 					<div className={style.getStartedForm_form_leaf}>
 						<Image src={I.formLeafs} priority />

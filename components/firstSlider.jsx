@@ -58,9 +58,7 @@ export const FirstSlider = () => {
 	const isLastSlide = sliderData && currentPosition === sliderData.length
 	const isOnlyOneSlide = sliderData && sliderData.length > 1
 
-	if (sliderData.length === 0) {
-		setState(firstSliderData)
-	}
+	if (sliderData.length === 0) { setState(firstSliderData) }
 
 	return (
 		<>
@@ -107,7 +105,7 @@ export const FirstSlider = () => {
 												<Image src={I.firstSliderRectangle} className={style.firstSlider_item_img}
 													data-scroll
 													data-scroll-delay={1}
-													data-scroll-speed='-1'
+													data-scroll-speed='-0.5'
 													data-scroll-position="top"
 													data-scroll-direction="vertical"
 													priority

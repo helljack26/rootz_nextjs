@@ -21,9 +21,6 @@ import { SecondSlider } from '../components/secondSlider';
 import { Footer } from '../components/footer';
 
 export default function Home() {
-    const [isSideMenuOpen, openSideMenu] = useState(false);
-    const [isShowLeafFalling, showLeafFalling] = useState(false);
-
     let tl = gsap.timeline({ delay: 0.3 });
     useEffect(() => {
         tl.from('.header_block', {
@@ -43,19 +40,18 @@ export default function Home() {
                 <title>Rootz</title>
                 <link rel="icon" href="/favicon.svg" />
                 <meta charSet="utf-8" />
-
             </Head>
+
+            <LeafsFalling />
 
             <SmoothScrollProvider>
                 <style global jsx>{`
                     @font-face { font-family: "Poppins-Regular"; src: url("/static/fonts/Poppins-Regular/Poppins-Regular.eot"); src: local("☺"), url("/static/fonts/Poppins-Regular/Poppins-Regular.woff") format("woff"), url("/static/fonts/Poppins-Regular/Poppins-Regular.ttf") format("truetype"), url("/static/fonts/Poppins-Regular/Poppins-Regular.svg") format("svg"); font-weight: normal; font-style: normal;  }
                     @font-face { font-family: "Poppins-Bold"; src: url("/static/fonts/Poppins-Bold/Poppins-Bold.eot"); src: local("☺"), url("/static/fonts/Poppins-Bold/Poppins-Bold.woff") format("woff"), url("/static/fonts/Poppins-Bold/Poppins-Bold.ttf") format("truetype"), url("/static/fonts/Poppins-Bold/Poppins-Bold.svg") format("svg"); font-weight: normal; font-style: normal; }
                  `}</style>
-                <LeafsFalling isShowLeafFalling={isShowLeafFalling} />
 
-                <Navbar isSideMenuOpen={isSideMenuOpen} openSideMenu={openSideMenu} showLeafFalling={showLeafFalling} />
-                <SideMenu isSideMenuOpen={isSideMenuOpen} openSideMenu={openSideMenu} />
-
+                <Navbar />
+                <SideMenu />
 
                 <div id='home' className={style.intro} data-scroll-section>
                     <NatureNeedsYou />

@@ -5,8 +5,8 @@ const GlobalState = observable({
   scrollRef: null,
   scroll: null,
   isShowLeafFalling: false,
-  isInputFocus: false,
-  isInputActive: false,
+  isSideMenuOpen: false,
+
 })
 
 export default GlobalState;

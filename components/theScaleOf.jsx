@@ -22,63 +22,58 @@ export const TheScaleOf = () => {
 
     return (
         <div className={style.scaleOf} data-scroll-section>
-            <h2 className={style.scaleOf_title}
+            <div
                 data-scroll
                 data-scroll-delay={1}
-                data-scroll-speed={0.5}
-                data-scroll-position="top"
-                data-scroll-direction="vertical"
-            >
-                The scale of the challenges facing our planet
-                can seem daunting, but we can all do something.
-            </h2>
-
-            <div className={style.scaleOf_row}
-                data-scroll
-                data-scroll-delay={1}
-                data-scroll-speed={0.5}
-                data-scroll-position="top"
-                data-scroll-direction="vertical"
-            >
-                {theScaleOfData.map((scaleItem, id) => {
-                    return (
-                        <div key={id}>
-                            <div className={style.scaleOf_row_item}  >
-                                <div className={style.scaleOf_row_item_img}  >
-                                    <Image src={scaleItem.scaleIcon} width={65} height={65} />
-                                </div>
-
-                                <span className={style.scaleOf_row_item_text}>
-                                    {scaleItem.scaleText}
-                                </span>
-                            </div>
-                        </div>
-                    )
-                })}
-            </div>
-
-            {/* Backgrounds */}
-            <span className={style.scale_leafs_left}>
-                <Image src={I.scaleLeafsLeft} />
-            </span>
-
-            <span
-                data-scroll
-                data-scroll-delay={0.5}
                 data-scroll-speed={0.2}
                 data-scroll-position="top"
                 data-scroll-direction="vertical"
-                className={style.scale_gradient_circle}>
-                <Image src={I.scaleGradientCircle} />
-            </span>
+                className={style.scaleOf_block}
+            >
 
-            <span className={style.scale_leafs_right}>
-                <Image src={I.scaleLeafsRight} />
-            </span>
+                <h2 className={style.scaleOf_title}>
+                    The scale of the challenges facing our planet
+                    can seem daunting, but we can all do something.
+                </h2>
 
-            <span className={style.scale_leafs_mobile}>
-                <Image src={I.scaleLeafsMobile} />
-            </span>
+                <div className={style.scaleOf_row}
+                >
+                    {theScaleOfData.map((scaleItem, id) => {
+                        return (
+                            <div key={id}>
+                                <div className={style.scaleOf_row_item}  >
+                                    <div className={style.scaleOf_row_item_img}  >
+                                        <Image src={scaleItem.scaleIcon} width={65} height={65} />
+                                    </div>
+
+                                    <span className={style.scaleOf_row_item_text}>
+                                        {scaleItem.scaleText}
+                                    </span>
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
+
+                {/* Backgrounds */}
+                <span className={style.scale_leafs_left}>
+                    <Image src={I.scaleLeafsLeft} />
+                </span>
+
+                <span
+                    className={style.scale_gradient_circle}>
+                    <Image src={I.scaleGradientCircle} />
+                </span>
+
+                <span className={style.scale_leafs_right}>
+                    <Image src={I.scaleLeafsRight} />
+                </span>
+
+                <span className={style.scale_leafs_mobile}>
+                    <Image src={I.scaleLeafsMobile} />
+                </span>
+            </div>
         </div>
+
     );
 };
