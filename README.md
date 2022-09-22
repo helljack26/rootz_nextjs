@@ -7,8 +7,8 @@ You can watch deployed project [here](https://rootz-nextjs-4oj4nbb98-helljack26.
  - React
  - Locomotive scroll
  - Gsap animation
- - Html
- - Scss
- - React router dom
+ - Next router
  - React hook form
  - Mobx
+ - Html
+ - Scss
